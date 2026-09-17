@@ -1,0 +1,140 @@
+[
+  {
+    "source": "ibm_xforce_threat_intelligence_index_2024",
+    "reportTitle": "IBM X-Force Threat Intelligence Index 2024",
+    "publicationDate": "2024-02-15",
+    "scope": "global",
+    "bucket": [
+      "ransomware"
+    ],
+    "sector": [
+      "critical_manufacturing"
+    ],
+    "metrics": [
+      {
+        "name": "incident_share",
+        "value": 0.257,
+        "unit": "ratio",
+        "notes": "Manufacturing accounted for 25.7% of global ransomware incidents in 2023 (top attacked industry for the third consecutive year)."
+      }
+    ],
+    "citationUrl": "https://community.ibm.com/community/user/discussion/2024-insights-from-the-x-force-threat-intelligence-index-report-are-here"
+  },
+  {
+    "source": "ibm_xforce_threat_intelligence_index_2025",
+    "reportTitle": "IBM X-Force Threat Intelligence Index 2025",
+    "publicationDate": "2025-02-15",
+    "scope": "global",
+    "bucket": [
+      "ransomware"
+    ],
+    "sector": [
+      "critical_manufacturing"
+    ],
+    "metrics": [
+      {
+        "name": "incident_rank",
+        "value": 1,
+        "unit": "rank",
+        "notes": "Manufacturing remained the #1 targeted industry in 2024, with extortion (29%) and data theft (24%) common impacts."
+      }
+    ],
+    "citationUrl": "https://www.ibm.com/thought-leadership/institute-business-value/en-us/report/2025-threat-intelligence-index"
+  },
+  {
+    "source": "ncc_group_threat_monitor_2023",
+    "reportTitle": "NCC Group Annual Threat Monitor Report 2023",
+    "publicationDate": "2024-01-15",
+    "scope": "global",
+    "bucket": [
+      "ransomware"
+    ],
+    "sector": [
+      "critical_manufacturing"
+    ],
+    "metrics": [
+      {
+        "name": "incident_count",
+        "value": 1484,
+        "unit": "count",
+        "notes": "Industrials (including manufacturing) saw 1,484 ransomware attacks in 2023 (~32% of global incidents), an 85% increase over 2022."
+      }
+    ],
+    "citationUrl": "https://www.nccgroup.com/newsroom/annual-ransomware-attacks-increased-by-84-in-2023/"
+  },
+  {
+    "source": "sophos_state_of_ransomware_manufacturing_2024",
+    "reportTitle": "Sophos State of Ransomware in Manufacturing and Production 2024",
+    "publicationDate": "2024-05-28",
+    "scope": "global",
+    "bucket": [
+      "ransomware"
+    ],
+    "sector": [
+      "critical_manufacturing"
+    ],
+    "metrics": [
+      {
+        "name": "attack_rate",
+        "value": 0.65,
+        "unit": "ratio",
+        "notes": "65% of manufacturing/production organizations were hit by ransomware in 2023 (up from 56% in 2022)."
+      },
+      {
+        "name": "encryption_rate",
+        "value": 0.74,
+        "unit": "ratio",
+        "notes": "74% of manufacturing attacks resulted in data encryption (five-year high)."
+      },
+      {
+        "name": "payment_rate",
+        "value": 0.62,
+        "unit": "ratio",
+        "notes": "62% of manufacturing victims paid the ransom for data recovery."
+      }
+    ],
+    "citationUrl": "https://news.sophos.com/en-us/2024/05/28/the-state-of-ransomware-in-manufacturing-and-production-2024/"
+  },
+  {
+    "source": "fbi_ic3_internet_crime_report_2023",
+    "reportTitle": "FBI IC3 Internet Crime Report 2023",
+    "publicationDate": "2024-03-15",
+    "scope": "united_states",
+    "bucket": [
+      "ransomware"
+    ],
+    "sector": [
+      "critical_manufacturing"
+    ],
+    "metrics": [
+      {
+        "name": "incident_count",
+        "value": 218,
+        "unit": "count",
+        "notes": "U.S. critical manufacturing sector reported 218 ransomware incidents to IC3 in 2023 (second-most targeted CI sector)."
+      }
+    ],
+    "citationUrl": "https://www.aae.org/specialty/wp-content/uploads/sites/2/2024/05/FBI-Internet-Crime-Report-2023.pdf"
+  },
+  {
+    "source": "fbi_ic3_internet_crime_report_2024",
+    "reportTitle": "FBI IC3 Internet Crime Report 2024",
+    "publicationDate": "2025-03-15",
+    "scope": "united_states",
+    "bucket": [
+      "ransomware"
+    ],
+    "sector": [
+      "critical_manufacturing"
+    ],
+    "metrics": [
+      {
+        "name": "incident_count",
+        "value": 258,
+        "unit": "count",
+        "notes": "Critical manufacturing was the most-targeted U.S. critical infrastructure sector for ransomware in 2024 with 258 reported incidents."
+      }
+    ],
+    "citationUrl": "https://www.trustwave.com/en-us/resources/blogs/trustwave-blog/fbi-2024-ic3-report-phishing-soars-ransomware-batters-critical-infrastructure-as-cyber-losses-climb/"
+  }
+]

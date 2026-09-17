@@ -1,0 +1,54 @@
+[
+  {
+    "source": "mandiant_mtrends_2024",
+    "reportTitle": "M-Trends 2024",
+    "organization": "Mandiant (Google Cloud)",
+    "publicationDate": "2024-04-30",
+    "scope": "global",
+    "bucket": ["ip_theft"],
+    "vectors": ["zero_day_exploitation", "phishing"],
+    "targetProfiles": ["critical_infrastructure", "large_enterprise", "government"],
+    "metrics": [
+      {
+        "name": "global_median_dwell_time_days",
+        "value": 10,
+        "unit": "days",
+        "notes": "The global median dwell time (time from compromise to detection) decreased to 10 days."
+      },
+      {
+        "name": "externally_detected_breaches_ratio",
+        "value": 0.53,
+        "unit": "ratio",
+        "notes": "53% of intrusions were detected by external parties, indicating continued challenges in internal detection capabilities."
+      }
+    ],
+    "insights": "Espionage remains a primary motivation for state-sponsored threat actors. The report highlights China-nexus actors' focus on exploiting edge devices and virtualization software.",
+    "citationUrl": "https://cloud.google.com/security/m-trends"
+  },
+  {
+    "source": "microsoft_digital_defense_report_2023",
+    "reportTitle": "Microsoft Digital Defense Report 2023",
+    "organization": "Microsoft",
+    "publicationDate": "2023-11-08",
+    "scope": "global",
+    "bucket": ["ip_theft"],
+    "vectors": ["password_spray", "phishing"],
+    "targetProfiles": ["critical_infrastructure", "government", "large_enterprise"],
+    "metrics": [
+      {
+        "name": "nation_state_targeting_ci_ratio",
+        "value": 0.7,
+        "unit": "ratio",
+        "notes": "Almost 70% of nation-state activity observed by Microsoft from mid-2022 to mid-2023 targeted critical infrastructure sectors."
+      },
+      {
+        "name": "password_attacks_per_second",
+        "value": 4000,
+        "unit": "count_per_second",
+        "notes": "Microsoft observed an average of more than 4,000 password-based attacks per second, a significant increase year-over-year."
+      }
+    ],
+    "insights": "Nation-state actors are increasingly blending cyberattacks with influence operations. Russia, Iran, China, and North Korea remain the most active state actors, targeting organizations for intelligence gathering and disruption.",
+    "citationUrl": "https://www.microsoft.com/en-us/security/security-insider/microsoft-digital-defense-report-2023"
+  }
+]

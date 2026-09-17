@@ -1,0 +1,236 @@
+[
+  {
+    "source": "microsoft_digital_defense_report_2025",
+    "reportTitle": "Microsoft Digital Defense Report 2025",
+    "organization": "Microsoft",
+    "publicationDate": "2024-10-01",
+    "scope": "global",
+    "actor": "iranian_threat_actors",
+    "sector": "it",
+    "metrics": [
+      {
+        "name": "attack_percentage",
+        "value": 0.21,
+        "unit": "ratio",
+        "notes": "21% of Iranian-aligned attacks (Jul 2023–Jun 2024) targeted the IT sector."
+      }
+    ],
+    "citationUrl": "https://www.microsoft.com/security/business/security-insider/microsoft-digital-defense-report-2025"
+  },
+  {
+    "source": "microsoft_digital_defense_report_2025",
+    "reportTitle": "Microsoft Digital Defense Report 2025",
+    "organization": "Microsoft",
+    "publicationDate": "2024-10-01",
+    "scope": "global",
+    "actor": "iranian_threat_actors",
+    "sector": "research_academia",
+    "metrics": [
+      {
+        "name": "attack_percentage",
+        "value": 0.15,
+        "unit": "ratio",
+        "notes": "15% of Iranian-aligned attacks targeted research and academia."
+      }
+    ],
+    "citationUrl": "https://www.microsoft.com/security/business/security-insider/microsoft-digital-defense-report-2025"
+  },
+  {
+    "source": "microsoft_digital_defense_report_2025",
+    "reportTitle": "Microsoft Digital Defense Report 2025",
+    "organization": "Microsoft",
+    "publicationDate": "2024-10-01",
+    "scope": "global",
+    "actor": "iranian_threat_actors",
+    "sector": "government",
+    "metrics": [
+      {
+        "name": "attack_percentage",
+        "value": 0.08,
+        "unit": "ratio",
+        "notes": "8% of Iranian-aligned attacks targeted government entities."
+      }
+    ],
+    "citationUrl": "https://www.microsoft.com/security/business/security-insider/microsoft-digital-defense-report-2025"
+  },
+  {
+    "source": "microsoft_digital_defense_report_2025",
+    "reportTitle": "Microsoft Digital Defense Report 2025",
+    "organization": "Microsoft",
+    "publicationDate": "2024-10-01",
+    "scope": "global",
+    "actor": "iranian_threat_actors",
+    "sector": "transportation",
+    "metrics": [
+      {
+        "name": "attack_percentage",
+        "value": 0.06,
+        "unit": "ratio",
+        "notes": "6% of Iranian-aligned attacks targeted transportation organizations."
+      }
+    ],
+    "citationUrl": "https://www.microsoft.com/security/business/security-insider/microsoft-digital-defense-report-2025"
+  },
+  {
+    "source": "microsoft_digital_defense_report_2025",
+    "reportTitle": "Microsoft Digital Defense Report 2025",
+    "organization": "Microsoft",
+    "publicationDate": "2024-10-01",
+    "scope": "global",
+    "actor": "iranian_threat_actors",
+    "sector": "consumer_retail",
+    "metrics": [
+      {
+        "name": "attack_percentage",
+        "value": 0.05,
+        "unit": "ratio",
+        "notes": "5% of Iranian-aligned attacks targeted consumer retail."
+      }
+    ],
+    "citationUrl": "https://www.microsoft.com/security/business/security-insider/microsoft-digital-defense-report-2025"
+  },
+  {
+    "source": "microsoft_digital_defense_report_2025",
+    "reportTitle": "Microsoft Digital Defense Report 2025",
+    "organization": "Microsoft",
+    "publicationDate": "2024-10-01",
+    "scope": "global",
+    "actor": "iranian_threat_actors",
+    "sector": "communications",
+    "metrics": [
+      {
+        "name": "attack_percentage",
+        "value": 0.05,
+        "unit": "ratio",
+        "notes": "5% of Iranian-aligned attacks targeted communications providers."
+      }
+    ],
+    "citationUrl": "https://www.microsoft.com/security/business/security-insider/microsoft-digital-defense-report-2025"
+  },
+  {
+    "source": "microsoft_digital_defense_report_2025",
+    "reportTitle": "Microsoft Digital Defense Report 2025",
+    "organization": "Microsoft",
+    "publicationDate": "2024-10-01",
+    "scope": "global",
+    "actor": "iranian_threat_actors",
+    "sector": "commercial_facilities",
+    "metrics": [
+      {
+        "name": "attack_percentage",
+        "value": 0.03,
+        "unit": "ratio",
+        "notes": "3% of Iranian-aligned attacks targeted commercial facilities."
+      }
+    ],
+    "citationUrl": "https://www.microsoft.com/security/business/security-insider/microsoft-digital-defense-report-2025"
+  },
+  {
+    "source": "microsoft_digital_defense_report_2025",
+    "reportTitle": "Microsoft Digital Defense Report 2025",
+    "organization": "Microsoft",
+    "publicationDate": "2024-10-01",
+    "scope": "global",
+    "actor": "iranian_threat_actors",
+    "sector": "manufacturing",
+    "metrics": [
+      {
+        "name": "attack_percentage",
+        "value": 0.03,
+        "unit": "ratio",
+        "notes": "3% of Iranian-aligned attacks targeted manufacturing."
+      }
+    ],
+    "citationUrl": "https://www.microsoft.com/security/business/security-insider/microsoft-digital-defense-report-2025"
+  },
+  {
+    "source": "microsoft_digital_defense_report_2025",
+    "reportTitle": "Microsoft Digital Defense Report 2025",
+    "organization": "Microsoft",
+    "publicationDate": "2024-10-01",
+    "scope": "global",
+    "actor": "iranian_threat_actors",
+    "sector": "think_tanks_ngos",
+    "metrics": [
+      {
+        "name": "attack_percentage",
+        "value": 0.03,
+        "unit": "ratio",
+        "notes": "3% of Iranian-aligned attacks targeted think tanks / NGOs."
+      }
+    ],
+    "citationUrl": "https://www.microsoft.com/security/business/security-insider/microsoft-digital-defense-report-2025"
+  },
+  {
+    "source": "microsoft_digital_defense_report_2025",
+    "reportTitle": "Microsoft Digital Defense Report 2025",
+    "organization": "Microsoft",
+    "publicationDate": "2024-10-01",
+    "scope": "global",
+    "actor": "iranian_threat_actors",
+    "sector": "defense_industry",
+    "metrics": [
+      {
+        "name": "attack_percentage",
+        "value": 0.02,
+        "unit": "ratio",
+        "notes": "2% of Iranian-aligned attacks targeted the defense industrial base."
+      }
+    ],
+    "citationUrl": "https://www.microsoft.com/security/business/security-insider/microsoft-digital-defense-report-2025"
+  },
+  {
+    "source": "microsoft_digital_defense_report_2025",
+    "reportTitle": "Microsoft Digital Defense Report 2025",
+    "organization": "Microsoft",
+    "publicationDate": "2024-10-01",
+    "scope": "global",
+    "actor": "russian_threat_actors",
+    "sector": "government",
+    "metrics": [
+      {
+        "name": "attack_percentage",
+        "value": 0.25,
+        "unit": "ratio",
+        "notes": "25% of Russian-aligned attacks targeted government organizations."
+      }
+    ],
+    "citationUrl": "https://www.microsoft.com/security/business/security-insider/microsoft-digital-defense-report-2025"
+  },
+  {
+    "source": "microsoft_digital_defense_report_2025",
+    "reportTitle": "Microsoft Digital Defense Report 2025",
+    "organization": "Microsoft",
+    "publicationDate": "2024-10-01",
+    "scope": "global",
+    "actor": "russian_threat_actors",
+    "sector": "research_academia",
+    "metrics": [
+      {
+        "name": "attack_percentage",
+        "value": 0.13,
+        "unit": "ratio",
+        "notes": "13% of Russian-aligned attacks targeted research and academia."
+      }
+    ],
+    "citationUrl": "https://www.microsoft.com/security/business/security-insider/microsoft-digital-defense-report-2025"
+  },
+  {
+    "source": "microsoft_digital_defense_report_2025",
+    "reportTitle": "Microsoft Digital Defense Report 2025",
+    "organization": "Microsoft",
+    "publicationDate": "2024-10-01",
+    "scope": "global",
+    "actor": "russian_threat_actors",
+    "sector": "think_tanks_ngos",
+    "metrics": [
+      {
+        "name": "attack_percentage",
+        "value": 0.13,
+        "unit": "ratio",
+        "notes": "13% of Russian-aligned attacks targeted NGOs and think tanks."
+      }
+    ],
+    "citationUrl": "https://www.microsoft.com/security/business/security-insider/microsoft-digital-defense-report-2025"
+  }
+]

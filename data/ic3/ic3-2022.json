@@ -1,0 +1,73 @@
+[
+  {
+    "source": "fbi_ic3_internet_crime_report_2022",
+    "reportTitle": "Internet Crime Complaint Center (IC3) 2022 Report",
+    "organization": "Federal Bureau of Investigation",
+    "publicationDate": "2023-03-22",
+    "scope": "united_states",
+    "bucket": [
+      "fraud"
+    ],
+    "vectors": [
+      "email",
+      "phone",
+      "social_engineering"
+    ],
+    "targetProfiles": [
+      "smb",
+      "large_enterprise"
+    ],
+    "metrics": [
+      {
+        "name": "bec_complaints",
+        "value": 21832,
+        "unit": "count",
+        "notes": "Number of Business Email Compromise complaints logged in 2022."
+      },
+      {
+        "name": "bec_adjusted_losses_usd",
+        "value": 2700000000,
+        "unit": "usd",
+        "notes": "Adjusted losses attributed to BEC exceeded $2.7 billion."
+      }
+    ],
+    "insights": "IC3 highlighted attackers spoofing legitimate phone numbers and investment accounts.",
+    "citationUrl": "https://www.ic3.gov/Media/PDF/AnnualReport/2022_IC3Report.pdf"
+  },
+  {
+    "source": "fbi_ic3_internet_crime_report_2022",
+    "reportTitle": "Internet Crime Complaint Center (IC3) 2022 Report",
+    "organization": "Federal Bureau of Investigation",
+    "publicationDate": "2023-03-22",
+    "scope": "united_states",
+    "bucket": [
+      "ransomware"
+    ],
+    "vectors": [
+      "phishing",
+      "vpn_rdp",
+      "supply_chain"
+    ],
+    "targetProfiles": [
+      "smb",
+      "large_enterprise",
+      "critical_infrastructure"
+    ],
+    "metrics": [
+      {
+        "name": "ransomware_complaints",
+        "value": 2385,
+        "unit": "count",
+        "notes": "Number of ransomware-related complaints received by IC3 in 2022."
+      },
+      {
+        "name": "reported_losses_usd",
+        "value": 34300000,
+        "unit": "usd",
+        "notes": "Reported ransomware losses exceeded $34.3 million."
+      }
+    ],
+    "insights": "IC3 called out growth in data-leak extortion as ransomware crews pressure victims.",
+    "citationUrl": "https://www.ic3.gov/Media/PDF/AnnualReport/2022_IC3Report.pdf"
+  }
+]

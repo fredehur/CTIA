@@ -1,0 +1,238 @@
+[
+  {
+    "source": "trustwave_spiderlabs_energy_report_2025",
+    "reportTitle": "Ransomware Attacks Against the Energy and Utilities Sector Up 80%",
+    "organization": "Trustwave SpiderLabs",
+    "publicationDate": "2025-01-22",
+    "scope": "global",
+    "bucket": [
+      "ransomware"
+    ],
+    "sector": [
+      "energy"
+    ],
+    "metrics": [
+      {
+        "name": "attack_growth_rate",
+        "value": 0.8,
+        "unit": "percentage_change",
+        "notes": "Year-over-year increase in ransomware attacks on the energy and utilities sector in 2024 vs 2023."
+      },
+      {
+        "name": "us_attack_share",
+        "value": 0.47,
+        "unit": "ratio",
+        "notes": "47% of observed energy-sector ransomware attacks in 2024 targeted organizations in the United States."
+      }
+    ],
+    "citationUrl": "https://www.trustwave.com/en-us/resources/blogs/trustwave-blog/ransomware-attacks-against-the-energy-and-utilities-sector-up-80/"
+  },
+  {
+    "source": "ibm_xforce_ti_index_2024_energy",
+    "reportTitle": "IBM Security X-Force Threat Intelligence Index 2024",
+    "organization": "IBM Security X-Force",
+    "publicationDate": "2024-02-16",
+    "scope": "global",
+    "bucket": [
+      "ransomware"
+    ],
+    "sector": [
+      "energy"
+    ],
+    "metrics": [
+      {
+        "name": "global_attack_share",
+        "value": 0.111,
+        "unit": "ratio",
+        "notes": "Energy sector represented 11.1% of global cyberattacks in 2023."
+      },
+      {
+        "name": "ransomware_share_of_energy_attacks",
+        "value": 0.22,
+        "unit": "ratio",
+        "notes": "22% of cyberattacks against energy organizations in 2023 were ransomware."
+      }
+    ],
+    "citationUrl": "https://www.ibm.com/thought-leadership/institute-business-value/en-us/report/2024-threat-intelligence-index"
+  },
+  {
+    "source": "ibm_xforce_ti_index_2025_energy",
+    "reportTitle": "IBM X-Force Threat Intelligence Index 2025",
+    "organization": "IBM Security X-Force",
+    "publicationDate": "2025-04-17",
+    "scope": "global",
+    "bucket": [
+      "ransomware"
+    ],
+    "sector": [
+      "energy"
+    ],
+    "metrics": [
+      {
+        "name": "global_attack_share",
+        "value": 0.10,
+        "unit": "ratio",
+        "notes": "Energy sector accounted for 10% of global cyberattacks in 2024."
+      }
+    ],
+    "citationUrl": "https://www.ibm.com/thought-leadership/institute-business-value/en-us/report/2025-threat-intelligence-index"
+  },
+  {
+    "source": "ibm_xforce_ti_index_2025_energy_ransomware",
+    "reportTitle": "IBM X-Force Threat Intelligence Index 2025",
+    "organization": "IBM Security X-Force",
+    "publicationDate": "2025-04-16",
+    "scope": "global",
+    "bucket": [
+      "ransomware"
+    ],
+    "sector": [
+      "energy"
+    ],
+    "metrics": [
+      {
+        "name": "incident_share",
+        "value": 0.10,
+        "unit": "ratio",
+        "notes": "Energy sector accounted for 10% of global ransomware incidents in 2024."
+      }
+    ],
+    "citationUrl": "https://www.ibm.com/thought-leadership/institute-business-value/en-us/report/2025-threat-intelligence-index"
+  },
+  {
+    "source": "ibm_xforce_ti_index_2023_energy_uk",
+    "reportTitle": "IBM X-Force Threat Intelligence Index 2023",
+    "organization": "IBM Security X-Force",
+    "publicationDate": "2023-02-22",
+    "scope": "united_kingdom",
+    "bucket": [
+      "ransomware"
+    ],
+    "sector": [
+      "energy"
+    ],
+    "metrics": [
+      {
+        "name": "incident_share",
+        "value": 0.16,
+        "unit": "ratio",
+        "notes": "Energy and utilities made up 16% of UK ransomware incidents observed in 2022."
+      }
+    ],
+    "citationUrl": "https://uk.newsroom.ibm.com/2023-02-22-IBM-Report-Reveals-UK-Energy-Sector-Is-Most-Targeted-By-Cyberattacks"
+  },
+  {
+    "source": "trustwave_risk_radar_energy_utilities_2025",
+    "reportTitle": "Trustwave Risk Radar 2025: Energy & Utilities",
+    "organization": "Trustwave SpiderLabs",
+    "publicationDate": "2025-01-15",
+    "scope": "global",
+    "bucket": [
+      "ransomware"
+    ],
+    "sector": [
+      "energy",
+      "utilities"
+    ],
+    "metrics": [
+      {
+        "name": "leak_site_incidents_h2_2022",
+        "value": 53,
+        "unit": "count",
+        "notes": "Energy & Utilities ransomware victims posted to leak sites in H2 2022."
+      },
+      {
+        "name": "leak_site_incidents_h1_2023",
+        "value": 84,
+        "unit": "count",
+        "notes": "Leak-site incidents attributed to Energy & Utilities in H1 2023."
+      },
+      {
+        "name": "leak_site_incidents_h2_2023",
+        "value": 132,
+        "unit": "count",
+        "notes": "Leak-site incidents attributed to Energy & Utilities in H2 2023."
+      },
+      {
+        "name": "leak_site_incidents_h1_2024",
+        "value": 125,
+        "unit": "count",
+        "notes": "Leak-site incidents attributed to Energy & Utilities in H1 2024."
+      }
+    ],
+    "citationUrl": "https://www.trustwave.com/en-us/resources/library/documents/trustwave-risk-radar-energy-utilities/"
+  },
+  {
+    "source": "socradar_energy_threat_report_2023",
+    "reportTitle": "Global Energy Threat Report 2023",
+    "organization": "SOCRadar",
+    "publicationDate": "2024-03-01",
+    "scope": "global",
+    "bucket": [
+      "ransomware"
+    ],
+    "sector": [
+      "energy",
+      "utilities"
+    ],
+    "metrics": [
+      {
+        "name": "leak_site_mentions_2022",
+        "value": 104,
+        "unit": "count",
+        "notes": "Ransomware leak-site mentions targeting energy/utilities in 2022."
+      },
+      {
+        "name": "leak_site_mentions_2023",
+        "value": 53,
+        "unit": "count",
+        "notes": "Ransomware leak-site mentions targeting energy/utilities in 2023."
+      }
+    ],
+    "citationUrl": "https://socradar.io/global-energy-threat-report-2023/"
+  },
+  {
+    "source": "eisac_end_of_year_report_2023",
+    "reportTitle": "E-ISAC 2023 End-of-Year Report",
+    "organization": "North American Electricity ISAC (NERC)",
+    "publicationDate": "2024-05-01",
+    "scope": "north_america",
+    "bucket": [
+      "ransomware"
+    ],
+    "sector": [
+      "energy"
+    ],
+    "metrics": [
+      {
+        "name": "incident_count",
+        "value": 110,
+        "unit": "count",
+        "notes": "Ransomware incidents reported across the North American electricity sector in 2023."
+      }
+    ],
+    "citationUrl": "https://www.nerc.com/comm/e-isac/Documents/2023_EOY_Report.pdf"
+  },
+  {
+    "source": "eurelectric_cybersecurity_power_sector_2025",
+    "reportTitle": "Cybersecurity in the Power Sector",
+    "organization": "Eurelectric",
+    "publicationDate": "2025-02-21",
+    "scope": "europe",
+    "bucket": [
+      "ransomware"
+    ],
+    "sector": [
+      "energy"
+    ],
+    "metrics": [
+      {
+        "name": "incident_count",
+        "value": 48,
+        "unit": "count",
+        "notes": "Number of successful cyberattacks on Europe’s energy infrastructure in 2022."
+      }
+    ],
+    "citationUrl": "https://www.eurelectric.org/cybersecurity-power-sector"
+  }
+]

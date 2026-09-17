@@ -1,0 +1,34 @@
+[
+  {
+    "campaignName": "Conti Deployments (PRODAFT)",
+    "actor": "wizard_spider",
+    "metricValue": 5,
+    "unit": "count",
+    "citationUrl": "https://25491742.fs1.hubspotusercontent-eu1.net/hubfs/25491742/%5BWS%5D%20Wizard%20Spider%20Group%20In-Depth%20Analysis.pdf",
+    "notes": "Encryptions observed from Wizard Spider infrastructure during PRODAFT visibility window (2021-11 to 2022-03). Ransomware family: Conti."
+  },
+  {
+    "campaignName": "Ryuk Attack Rate (Check Point)",
+    "actor": "wizard_spider",
+    "metricValue": 20,
+    "unit": "orgs_per_week",
+    "citationUrl": "https://blog.checkpoint.com/security/study-global-rise-in-ransomware-attacks/",
+    "notes": "Estimated Ryuk attacks per week (global) during surge period (2020-07 to 2020-10). Ransomware family: Ryuk."
+  },
+  {
+    "campaignName": "Ryuk Deployment Rate (Mandiant)",
+    "actor": "wizard_spider",
+    "metricValue": 0.4,
+    "unit": "ratio",
+    "citationUrl": "https://www.cybersecuritydive.com/news/ryuk-ransomware-mandiant-unc1878-sans-institute/593903/",
+    "notes": "Less than 40% share of UNC1878 intrusions escalated to deploying Ryuk in 2020. Ransomware family: Ryuk."
+  },
+  {
+    "campaignName": "Conti Conversion Rate (PRODAFT)",
+    "actor": "wizard_spider",
+    "metricValue": 0.05,
+    "unit": "ratio",
+    "citationUrl": "https://25491742.fs1.hubspotusercontent-eu1.net/hubfs/25491742/%5BWS%5D%20Wizard%20Spider%20Group%20In-Depth%20Analysis.pdf",
+    "notes": "Approximate encryption conversion rate (5%) among late-stage intrusions during PRODAFT window (2021-11 to 2022-03). Ransomware family: Conti."
+  }
+]

@@ -1,0 +1,19 @@
+
+[
+  {
+    "campaignName": "REvil Attack Rate (Check Point 1)",
+    "actor": "gold_southfield",
+    "metricValue": 15,
+    "unit": "orgs_per_week",
+    "citationUrl": "https://blog.checkpoint.com/security/russian-speaking-group-strikes-on-us-independence-weekend-hitting-several-organizations-with-ransomware-demands-in-the-biggest-supply-chain-attack-since-sunburst/",
+    "notes": "Estimated REvil attacks per week observed during the pre-Kaseya surge period (May–July 2021)."
+  },
+  {
+    "campaignName": "REvil Attack Rate (Check Point 2)",
+    "actor": "gold_southfield",
+    "metricValue": 15,
+    "unit": "orgs_per_week",
+    "citationUrl": "https://blog.checkpoint.com/security/protecting-smbs-against-kaseya-supply-chain-zero-day-and-ransomware-attacks/",
+    "notes": "Supporting citation: 15 new REvil attacks per week over the prior two months (May–July 2021)."
+  }
+]

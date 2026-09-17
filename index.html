@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cyber Threat Intelligence Analyst</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              background: '#F9FAFB',
+              surface: '#FFFFFF',
+              card: '#FFFFFF',
+              border: '#E5E7EB',
+              'text-primary': '#111827',
+              'text-secondary': '#6B7280',
+              'accent-primary': '#000000',
+              'accent-pro': '#4B5563',
+              'focus-ring': 'rgba(0, 0, 0, 0.2)',
+            },
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+              mono: ['JetBrains Mono', 'monospace'],
+            }
+          }
+        }
+      }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+      body {
+        background-color: theme('colors.background');
+        color: theme('colors.text-primary');
+        font-family: 'Inter', sans-serif;
+        -webkit-font-smoothing: antialiased;
+      }
+      .font-mono {
+        font-family: 'JetBrains Mono', monospace;
+      }
+      
+      /* Standardized component borders/shadows for KISS look */
+      .card-base {
+        background-color: theme('colors.surface');
+        border: 1px solid theme('colors.border');
+        border-radius: 0.5rem;
+        box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>

@@ -1,0 +1,16 @@
+[
+  {
+    "bucket": "ransomware",
+    "fileName": "ransomware.json",
+    "description": "Metrics related to ransomware payment rates, data recovery success, and extortion outcomes.",
+    "ingestedAt": "2024-07-01T12:00:00Z",
+    "checksum": "sha256-placeholder-for-ransomware-success"
+  },
+  {
+    "bucket": "fraud",
+    "fileName": "fraud.json",
+    "description": "Metrics related to phishing click/conversion rates and average losses from BEC and other fraud schemes.",
+    "ingestedAt": "2024-07-01T12:00:00Z",
+    "checksum": "sha256-placeholder-for-fraud-success"
+  }
+]

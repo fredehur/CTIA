@@ -1,0 +1,97 @@
+[
+  {
+    "source": "fbi_ic3_internet_crime_report_2023",
+    "reportTitle": "Internet Crime Complaint Center (IC3) 2023 Report",
+    "organization": "Federal Bureau of Investigation",
+    "publicationDate": "2024-03-23",
+    "scope": "united_states",
+    "bucket": [
+      "fraud"
+    ],
+    "vectors": [
+      "email",
+      "phone",
+      "social_engineering"
+    ],
+    "targetProfiles": [
+      "smb",
+      "large_enterprise"
+    ],
+    "metrics": [
+      {
+        "name": "bec_complaints",
+        "value": 21489,
+        "unit": "count",
+        "notes": "BEC complaints received in 2023."
+      },
+      {
+        "name": "bec_losses_usd",
+        "value": 2940000000,
+        "unit": "usd",
+        "notes": "Reported BEC losses exceeded $2.94B."
+      },
+      {
+        "name": "share_of_total_losses",
+        "value": 0.35,
+        "unit": "ratio",
+        "notes": "BEC accounted for roughly 35% of total cybercrime losses reported to IC3."
+      }
+    ],
+    "insights": "BEC remains the costliest category; phishing/smishing stay high-volume.",
+    "citationUrl": "https://www.ic3.gov/annualreport/reports/2023_ic3report.pdf"
+  },
+  {
+    "source": "fbi_ic3_internet_crime_report_2023",
+    "reportTitle": "Internet Crime Complaint Center (IC3) 2023 Report",
+    "organization": "Federal Bureau of Investigation",
+    "publicationDate": "2024-03-23",
+    "scope": "united_states",
+    "bucket": [
+      "ransomware"
+    ],
+    "vectors": [
+      "phishing",
+      "vpn_rdp",
+      "supply_chain"
+    ],
+    "targetProfiles": [
+      "smb",
+      "large_enterprise",
+      "critical_infrastructure"
+    ],
+    "metrics": [
+      {
+        "name": "ransomware_incidents",
+        "value": 2825,
+        "unit": "count",
+        "notes": "Reported ransomware incidents filed to IC3 in 2023 (~18% YoY increase)."
+      },
+      {
+        "name": "reported_losses_usd",
+        "value": 59600000,
+        "unit": "usd",
+        "notes": "Losses tied to ransomware complaints (~74% higher than 2022)."
+      },
+      {
+        "name": "healthcare_incidents",
+        "value": 249,
+        "unit": "count",
+        "notes": "Healthcare & Public Health sector incidents."
+      },
+      {
+        "name": "critical_manufacturing_incidents",
+        "value": 218,
+        "unit": "count",
+        "notes": "Critical Manufacturing sector incidents."
+      },
+      {
+        "name": "government_incidents",
+        "value": 204,
+        "unit": "count",
+        "notes": "Government facilities sector incidents."
+      }
+    ],
+    "insights": "Confirms ransomware affected all 16 critical infrastructure sectors.",
+    "citationUrl": "https://www.ic3.gov/annualreport/reports/2023_ic3report.pdf"
+  }
+]

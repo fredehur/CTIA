@@ -1,0 +1,52 @@
+[
+  {
+    "source": "abnormal_security_email_threat_report_h2_2023",
+    "reportTitle": "H2 2023 Email Threat Report",
+    "organization": "Abnormal Security",
+    "publicationDate": "2024-02-15",
+    "scope": "global_abnormal_platform_data",
+    "bucket": ["fraud"],
+    "vectors": ["bec", "social_engineering", "email"],
+    "targetProfiles": ["large_enterprise"],
+    "metrics": [
+      {
+        "name": "bec_attack_volume_growth_yoy",
+        "value": 0.55,
+        "unit": "ratio",
+        "notes": "A 55% increase in the volume of Business Email Compromise attacks year-over-year."
+      },
+      {
+        "name": "avg_potential_loss_per_bec_usd",
+        "value": 177000,
+        "unit": "usd",
+        "notes": "The average potential loss associated with a single successful BEC attack was $177,000, based on invoice and payroll amounts."
+      }
+    ],
+    "citationUrl": "https://abnormalsecurity.com/resources/research-reports/h2-2023-email-threat-report"
+  },
+  {
+    "source": "proofpoint_state_of_the_phish_2024",
+    "reportTitle": "2024 State of the Phish",
+    "organization": "Proofpoint",
+    "publicationDate": "2024-02-28",
+    "scope": "global_survey_and_platform_data",
+    "bucket": ["fraud"],
+    "vectors": ["phishing"],
+    "targetProfiles": ["smb", "large_enterprise"],
+    "metrics": [
+      {
+        "name": "org_phish_click_rate",
+        "value": 0.71,
+        "unit": "ratio",
+        "notes": "71% of organizations experienced at least one successful phishing attack where a user clicked a malicious link."
+      },
+      {
+        "name": "employee_reporting_rate",
+        "value": 0.56,
+        "unit": "ratio",
+        "notes": "Only 56% of employees reported a suspicious email they received, indicating a significant gap in user awareness and reporting culture."
+      }
+    ],
+    "citationUrl": "https://www.proofpoint.com/us/resources/threat-reports/state-of-phish"
+  }
+]

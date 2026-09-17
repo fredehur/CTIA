@@ -1,0 +1,247 @@
+[
+  {
+    "source": "coveware_ransomware_report_q1_2024",
+    "reportTitle": "Ransomware Demands and Payments: A Q1 2024 Look",
+    "organization": "Coveware",
+    "publicationDate": "2024-04-18",
+    "scope": "global_coveware_cases",
+    "bucket": ["ransomware"],
+    "vectors": ["extortion"],
+    "targetProfiles": ["smb", "large_enterprise"],
+    "metrics": [
+      {
+        "name": "payment_rate",
+        "value": 0.28,
+        "unit": "ratio",
+        "notes": "The percentage of Coveware's ransomware cases where the victim organization paid the ransom."
+      },
+      {
+        "name": "avg_ransom_payment_usd",
+        "value": 588577,
+        "unit": "usd",
+        "notes": "The average ransom payment amount across all cases."
+      },
+      {
+        "name": "median_ransom_payment_usd",
+        "value": 255000,
+        "unit": "usd",
+        "notes": "The median ransom payment amount, which is less skewed by very large demands."
+      }
+    ],
+    "citationUrl": "https://www.coveware.com/blog/2024/4/18/ransomware-demands-and-payments-a-q1-2024-look"
+  },
+  {
+    "source": "sophos_state_of_ransomware_2024",
+    "reportTitle": "The State of Ransomware 2024",
+    "organization": "Sophos",
+    "publicationDate": "2024-04-30",
+    "scope": "global_survey_5000_respondents",
+    "bucket": ["ransomware"],
+    "vectors": ["exploit", "credentials", "phishing"],
+    "targetProfiles": ["smb", "large_enterprise", "critical_infrastructure"],
+    "metrics": [
+      {
+        "name": "paid_ransom_rate",
+        "value": 0.45,
+        "unit": "ratio",
+        "notes": "45% of organizations that were hit by ransomware admitted to paying the ransom."
+      },
+      {
+        "name": "data_recovery_rate_after_payment",
+        "value": 0.97,
+        "unit": "ratio",
+        "notes": "97% of organizations that paid the ransom got at least some of their data back."
+      },
+      {
+        "name": "avg_recovery_cost_usd_excluding_ransom",
+        "value": 2730000,
+        "unit": "usd",
+        "notes": "The average cost to recover from a ransomware attack, excluding any ransom paid, was $2.73 million."
+      },
+      {
+        "name": "encryption_success_rate",
+        "value": 0.70,
+        "unit": "ratio",
+        "notes": "70% of ransomware attacks successfully encrypted data during the 2023-2024 survey period."
+      }
+    ],
+    "citationUrl": "https://news.sophos.com/en-us/2024/04/30/the-state-of-ransomware-2024/"
+  },
+  {
+    "source": "sophos_state_of_ransomware_2025",
+    "reportTitle": "State of Ransomware 2025",
+    "organization": "Sophos",
+    "publicationDate": "2025-06-30",
+    "scope": "global_survey_3400_orgs",
+    "bucket": ["ransomware"],
+    "targetProfiles": ["smb", "large_enterprise", "critical_infrastructure"],
+    "metrics": [
+      {
+        "name": "encryption_success_rate",
+        "value": 0.50,
+        "unit": "ratio",
+        "notes": "Percentage of ransomware attacks that successfully encrypted victim data across 17 countries (down from 70% in 2024)."
+      },
+      {
+        "name": "data_exfiltration_rate",
+        "value": 0.28,
+        "unit": "ratio",
+        "notes": "Share of encrypted attacks where adversaries also stole data."
+      },
+      {
+        "name": "backup_recovery_rate",
+        "value": 0.54,
+        "unit": "ratio",
+        "notes": "Organizations that restored from backups instead of paying."
+      },
+      {
+        "name": "ransom_payment_rate",
+        "value": 0.49,
+        "unit": "ratio",
+        "notes": "Victims that ultimately paid the ransom in the 2025 study."
+      }
+    ],
+    "citationUrl": "https://cyberlab.co.uk/wp-content/uploads/2025/07/sophos-state-of-ransomware-2025.pdf"
+  },
+  {
+    "source": "sophos_state_of_ransomware_2023",
+    "reportTitle": "State of Ransomware 2023",
+    "organization": "Sophos",
+    "publicationDate": "2023-05-10",
+    "scope": "global_survey_3000_orgs",
+    "bucket": ["ransomware"],
+    "metrics": [
+      {
+        "name": "encryption_success_rate",
+        "value": 0.76,
+        "unit": "ratio",
+        "notes": "Percentage of ransomware attacks that successfully encrypted data during the 2022 survey window."
+      }
+    ],
+    "citationUrl": "https://news.sophos.com/en-us/2023/05/10/state-of-ransomware-2023/"
+  },
+  {
+    "source": "dragos_ot_ics_cybersecurity_report_2025",
+    "reportTitle": "Dragos OT/ICS Cybersecurity Year in Review 2024",
+    "organization": "Dragos",
+    "publicationDate": "2025-02-01",
+    "scope": "global_ot_ics_incidents",
+    "bucket": ["ransomware"],
+    "targetProfiles": ["critical_infrastructure", "manufacturing", "industrial_control_systems"],
+    "metrics": [
+      {
+        "name": "operational_disruption_rate",
+        "value": 1.0,
+        "unit": "ratio",
+        "notes": "Share of OT/ICS ransomware incidents that caused operational disruption; Dragos observed near-universal impact."
+      },
+      {
+        "name": "full_shutdown_rate",
+        "value": 0.25,
+        "unit": "ratio",
+        "notes": "Incidents that forced a full shutdown of an OT site."
+      },
+      {
+        "name": "partial_disruption_rate",
+        "value": 0.75,
+        "unit": "ratio",
+        "notes": "Incidents that degraded OT operations without full shutdown."
+      }
+    ],
+    "citationUrl": "https://www.dragos.com/resources/press-release/dragos-reports-ot-ics-cyber-threats-escalate-amid-geopolitical-conflicts-and-increasing-ransomware-attacks/"
+  },
+  {
+    "source": "sophos_state_of_ransomware_state_local_gov_2024",
+    "reportTitle": "State of Ransomware in State and Local Government 2024",
+    "organization": "Sophos",
+    "publicationDate": "2024-08-14",
+    "scope": "us_state_local_government",
+    "bucket": ["ransomware"],
+    "targetProfiles": ["government"],
+    "metrics": [
+      {
+        "name": "encryption_success_rate",
+        "value": 0.98,
+        "unit": "ratio",
+        "notes": "Percentage of state and local government ransomware attacks that resulted in encryption."
+      }
+    ],
+    "citationUrl": "https://news.sophos.com/en-us/2024/08/14/the-state-of-ransomware-in-state-and-local-government-2024/"
+  },
+  {
+    "source": "sophos_state_of_ransomware_critical_infrastructure_2024",
+    "reportTitle": "State of Ransomware in Critical Infrastructure 2024",
+    "organization": "Sophos",
+    "publicationDate": "2024-07-17",
+    "scope": "global_critical_infrastructure",
+    "bucket": ["ransomware"],
+    "targetProfiles": ["critical_infrastructure", "energy", "utilities"],
+    "metrics": [
+      {
+        "name": "device_impact_rate",
+        "value": 0.62,
+        "unit": "ratio",
+        "notes": "Average share of devices impacted per ransomware attack in critical infrastructure organizations."
+      },
+      {
+        "name": "severe_device_impact_rate",
+        "value": 0.17,
+        "unit": "ratio",
+        "notes": "Organizations experiencing 91% or more of devices encrypted/impacted."
+      }
+    ],
+    "citationUrl": "https://news.sophos.com/en-us/2024/07/17/the-state-of-ransomware-in-critical-infrastructure-2024/"
+  },
+  {
+    "source": "sophos_state_of_ransomware_financial_services_2024",
+    "reportTitle": "State of Ransomware in Financial Services 2024",
+    "organization": "Sophos",
+    "publicationDate": "2024-07-10",
+    "scope": "global_financial_services",
+    "bucket": ["ransomware"],
+    "targetProfiles": ["financial_services"],
+    "metrics": [
+      {
+        "name": "encryption_success_rate",
+        "value": 0.49,
+        "unit": "ratio",
+        "notes": "Percentage of ransomware attacks that encrypted data in financial services firms."
+      }
+    ],
+    "citationUrl": "https://partnernews.sophos.com/en-us/2024/07/resources/the-state-of-ransomware-in-financial-services-2024/"
+  },
+  {
+    "source": "verizon_dbir_2025_ransomware",
+    "reportTitle": "2025 Verizon Data Breach Investigations Report",
+    "organization": "Verizon",
+    "publicationDate": "2025-05-15",
+    "scope": "global_breach_dataset",
+    "bucket": ["ransomware"],
+    "metrics": [
+      {
+        "name": "ransomware_presence_in_breaches",
+        "value": 0.44,
+        "unit": "ratio",
+        "notes": "Ransomware was present in 44% of confirmed breaches during the 2024 DBIR reporting window."
+      }
+    ],
+    "citationUrl": "https://www.verizon.com/business/resources/reports/dbir/"
+  },
+  {
+    "source": "enisa_threat_landscape_2025",
+    "reportTitle": "ENISA Threat Landscape 2025",
+    "organization": "ENISA",
+    "publicationDate": "2025-10-15",
+    "scope": "european_union",
+    "bucket": ["ransomware"],
+    "metrics": [
+      {
+        "name": "ransomware_malware_share",
+        "value": 0.873,
+        "unit": "ratio",
+        "notes": "Share of malicious code deployments after intrusion that were ransomware (vs other malware types) in the EU reporting period."
+      }
+    ],
+    "citationUrl": "https://www.enisa.europa.eu/publications/enisa-threat-landscape-2024"
+  }
+]

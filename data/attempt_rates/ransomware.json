@@ -1,0 +1,54 @@
+[
+  {
+    "source": "crowdstrike_global_threat_report_2024",
+    "reportTitle": "2024 Global Threat Report",
+    "organization": "CrowdStrike",
+    "publicationDate": "2024-02-27",
+    "scope": "global",
+    "bucket": ["ransomware"],
+    "vectors": ["identity_compromise", "cloud_exploitation"],
+    "targetProfiles": ["smb", "large_enterprise", "critical_infrastructure"],
+    "metrics": [
+      {
+        "name": "interactive_intrusion_increase_yoy",
+        "value": 0.75,
+        "unit": "ratio",
+        "notes": "A 75% year-over-year increase in hands-on-keyboard (interactive) intrusions."
+      },
+      {
+        "name": "ecrime_breakout_time_minutes",
+        "value": 5.48,
+        "unit": "minutes",
+        "notes": "Average time for an eCrime adversary to move laterally from initial compromise was 5 minutes and 29 seconds."
+      }
+    ],
+    "insights": "Identity-based attacks are a primary vector, with adversaries exploiting valid credentials. Cloud environments are increasingly targeted.",
+    "citationUrl": "https://www.crowdstrike.com/global-threat-report/"
+  },
+  {
+    "source": "unit42_ransomware_extortion_report_2024",
+    "reportTitle": "2024 Unit 42 Ransomware and Extortion Report",
+    "organization": "Palo Alto Networks (Unit 42)",
+    "publicationDate": "2024-03-12",
+    "scope": "global_leak_site_victims",
+    "bucket": ["ransomware"],
+    "vectors": ["vulnerability_exploitation"],
+    "targetProfiles": ["large_enterprise", "critical_infrastructure"],
+    "metrics": [
+      {
+        "name": "leak_site_victims_2023",
+        "value": 3998,
+        "unit": "count",
+        "notes": "Number of new victim organizations posted to ransomware leak sites in 2023, a 49% increase from 2022."
+      },
+      {
+        "name": "moveit_transfer_victim_count",
+        "value": 1140,
+        "unit": "count",
+        "notes": "The MOVEit Transfer vulnerability (CVE-2023-34362) led to over 1,140 publicly posted victims."
+      }
+    ],
+    "insights": "Vulnerability exploitation is the top initial access vector for ransomware. Multi-extortion techniques (encryption, data theft, DDoS) are now standard practice.",
+    "citationUrl": "https://www.paloaltonetworks.com/apps/pan/public/downloadResource?page=889482"
+  }
+]

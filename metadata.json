@@ -1,0 +1,8 @@
+{
+  "name": "Cyber Threat Intelligence Analyst",
+  "description": "An AI-powered application to analyze cyber threat scenarios. It uses a target-centric approach (Threat Actor + Modus Operandi + Target) and iteratively researches evidence using Google Search grounding and advanced reasoning to validate or disprove a given thesis.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

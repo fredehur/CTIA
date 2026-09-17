@@ -1,0 +1,28 @@
+
+[
+  {
+    "bucket": "ransomware",
+    "fileName": "ransomware.json",
+    "description": "Metrics related to ransomware incidents, threat actor activity, and initial access vectors.",
+    "ingestedAt": "2024-07-01T12:00:00Z"
+  },
+  {
+    "bucket": "fraud",
+    "fileName": "fraud.json",
+    "description": "Metrics related to fraud, Business Email Compromise (BEC), and precursor events like data breaches.",
+    "ingestedAt": "2024-07-01T12:00:00Z"
+  },
+  {
+    "bucket": "ip_theft",
+    "fileName": "ip_theft.json",
+    "description": "Metrics related to cyber espionage, nation-state actor campaigns, and intellectual property theft.",
+    "ingestedAt": "2024-07-01T12:00:00Z"
+  },
+  {
+    "bucket": "ransomware",
+    "sector": "energy",
+    "fileName": "energy.json",
+    "description": "Sector-specific ransomware and cyberattack metrics for energy and utilities.",
+    "ingestedAt": "2024-07-18T12:00:00Z"
+  }
+]

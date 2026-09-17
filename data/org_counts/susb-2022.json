@@ -1,0 +1,43 @@
+{
+  "source": "census_statistics_of_us_businesses",
+  "reportTitle": "Statistics of U.S. Businesses (SUSB) 2022 Annual Data Tables",
+  "organization": "U.S. Census Bureau",
+  "publicationDate": "2025-04-01",
+  "scope": "united_states_private_sector_employer_firms",
+  "notes": "Counts cover private-sector employer firms only (excludes most public-sector entities and nonemployer businesses). Employment size is measured during the week of March 12, 2022. The 1-4 employee class includes a small number of firms with zero paid employees in that reference week but with paid staff at other times of the year.",
+  "firmCounts": [
+    { "employeeRange": "1-4", "organizationCount": 4000000, "shareOfFirms": 0.63 },
+    { "employeeRange": "5-9", "organizationCount": 1000000, "shareOfFirms": 0.16 },
+    { "employeeRange": "10-19", "organizationCount": 650000, "shareOfFirms": 0.10 },
+    { "employeeRange": "20-49", "organizationCount": 350000, "shareOfFirms": 0.06 },
+    { "employeeRange": "50-99", "organizationCount": 230000, "shareOfFirms": 0.04 },
+    { "employeeRange": "100-249", "organizationCount": 70000, "shareOfFirms": 0.01 },
+    { "employeeRange": "250-499", "organizationCount": 35000, "shareOfFirms": 0.006 },
+    { "employeeRange": "500+", "organizationCount": 20000, "shareOfFirms": 0.003 }
+  ],
+  "targetProfileAggregates": [
+    {
+      "targetProfile": "smb",
+      "employeeRange": "1-249",
+      "organizationCount": 6300000,
+      "shareOfFirms": 0.997
+    },
+    {
+      "targetProfile": "large_enterprise",
+      "employeeRange": "250-499",
+      "organizationCount": 35000,
+      "shareOfFirms": 0.006
+    },
+    {
+      "targetProfile": "critical_infrastructure",
+      "employeeRange": "500+",
+      "organizationCount": 20000,
+      "shareOfFirms": 0.003
+    }
+  ],
+  "citations": [
+    "https://www.census.gov/data/tables/2022/econ/susb/2022-susb-annual.html",
+    "https://sbecouncil.org/about-us/facts-and-data/",
+    "https://www.census.gov/library/stories/2025/05/small-business-week.html"
+  ]
+}

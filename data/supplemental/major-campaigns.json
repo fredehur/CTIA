@@ -1,0 +1,42 @@
+[
+  {
+    "campaignName": "MOVEit Transfer (Clop) 2023",
+    "actor": "clop",
+    "sector": "multiple",
+    "metricDescription": "Victims impacted by Clop MOVEit campaign (global) in 2023",
+    "metricValue": 2600,
+    "unit": "count",
+    "citationUrl": "https://www.welivesecurity.com/en/cybersecurity/year-review-10-biggest-security-incidents-2023/",
+    "notes": "Clop exploited MOVEit Transfer vulnerabilities (e.g., CVE-2023-34362) leading to ~2,600 affected organizations worldwide."
+  },
+  {
+    "campaignName": "LockBit 3.0 Global Campaign 2023",
+    "actor": "lockbit",
+    "sector": "multiple",
+    "metricDescription": "Victims impacted by LockBit 3.0 campaign (global) in 2023",
+    "metricValue": 1047,
+    "unit": "count",
+    "citationUrl": "https://cyberint.checkpoint.com/blog/research/ransomware-trends-and-statistics-2023-report/",
+    "notes": "LockBit 3.0 accounted for ~24% of observed ransomware attacks in 2023 (~1,047 victims)."
+  },
+  {
+    "campaignName": "ALPHV/BlackCat Campaign 2023",
+    "actor": "alphv_blackcat",
+    "sector": "multiple",
+    "metricDescription": "Victims impacted by ALPHV/BlackCat campaign (global) in 2023",
+    "metricValue": 445,
+    "unit": "count",
+    "citationUrl": "https://cyberint.checkpoint.com/blog/research/ransomware-trends-and-statistics-2023-report/",
+    "notes": "ALPHV/BlackCat RaaS group conducted ~445 attacks globally in 2023."
+  },
+  {
+    "campaignName": "Scattered Spider / ALPHV Hospitality Attacks 2023",
+    "actor": "scattered_spider",
+    "sector": "hospitality_casino",
+    "metricDescription": "Victims impacted by ALPHV/Scattered Spider attacks in US hospitality/casino vertical (2023)",
+    "metricValue": 5,
+    "unit": "count",
+    "citationUrl": "https://www.reuters.com/technology/hackers-who-breached-casino-giants-mgm-caesars-also-hit-3-other-firms-okta-says-2023-09-19/",
+    "notes": "High-profile incident impacting MGM Resorts, Caesars Entertainment, and three additional firms; attackers leveraged Okta helpdesk social engineering."
+  }
+]

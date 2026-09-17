@@ -1,0 +1,60 @@
+[
+  {
+    "source": "verizon_dbir_2024",
+    "reportTitle": "2024 Data Breach Investigations Report",
+    "organization": "Verizon",
+    "publicationDate": "2024-05-01",
+    "scope": "global",
+    "bucket": ["fraud"],
+    "vectors": ["phishing", "pretexting", "social_engineering"],
+    "targetProfiles": ["smb", "large_enterprise"],
+    "metrics": [
+      {
+        "name": "vulnerability_exploitation_growth_yoy",
+        "value": 1.8,
+        "unit": "ratio",
+        "notes": "The exploitation of vulnerabilities as an initial access step in breaches grew by 180% year-over-year."
+      },
+      {
+        "name": "pretexting_in_social_breaches",
+        "value": 0.29,
+        "unit": "ratio",
+        "notes": "Pretexting, including Business Email Compromise (BEC), was involved in 29% of all social engineering breaches."
+      },
+      {
+        "name": "median_time_to_click_phish_seconds",
+        "value": 60,
+        "unit": "seconds",
+        "notes": "The median time for a user to click a malicious link in a phishing campaign is less than 60 seconds."
+      }
+    ],
+    "insights": "The human element continues to be a dominant factor in breaches, with social engineering and misuse being frequent attack patterns.",
+    "citationUrl": "https://www.verizon.com/business/resources/reports/dbir/"
+  },
+  {
+    "source": "itrc_data_breach_report_2023",
+    "reportTitle": "2023 Annual Data Breach Report",
+    "organization": "Identity Theft Resource Center (ITRC)",
+    "publicationDate": "2024-01-24",
+    "scope": "united_states",
+    "bucket": ["fraud"],
+    "vectors": ["supply_chain_attack"],
+    "targetProfiles": ["smb", "large_enterprise"],
+    "metrics": [
+      {
+        "name": "data_compromises_2023",
+        "value": 3205,
+        "unit": "count",
+        "notes": "Number of publicly reported data compromises in 2023, a 78% increase over 2022."
+      },
+      {
+        "name": "victims_impacted_2023",
+        "value": 353027892,
+        "unit": "count",
+        "notes": "Total number of estimated victims from data compromises in 2023."
+      }
+    ],
+    "insights": "Supply chain attacks were a primary driver of the record-breaking number of compromises, impacting thousands of entities through a single point of failure.",
+    "citationUrl": "https://www.idtheftcenter.org/publication/2023-annual-data-breach-report/"
+  }
+]

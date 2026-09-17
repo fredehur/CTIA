@@ -1,0 +1,266 @@
+[
+  {
+    "source": "fbi_ic3_internet_crime_report_2023",
+    "reportTitle": "2023 Internet Crime Report",
+    "organization": "Federal Bureau of Investigation",
+    "publicationDate": "2024-04-04",
+    "scope": "united_states",
+    "bucket": [
+      "ransomware"
+    ],
+    "sector": [
+      "healthcare"
+    ],
+    "metrics": [
+      {
+        "name": "incident_count",
+        "value": 249,
+        "unit": "count",
+        "notes": "Confirmed ransomware incidents reported by the U.S. Healthcare sector in 2023."
+      }
+    ],
+    "citationUrl": "https://www.ic3.gov/Media/PDF/AnnualReport/2023_IC3Report.pdf"
+  },
+  {
+    "source": "fbi_ic3_internet_crime_report_2024",
+    "reportTitle": "2024 Internet Crime Report",
+    "organization": "Federal Bureau of Investigation",
+    "publicationDate": "2025-04-23",
+    "scope": "united_states",
+    "bucket": [
+      "ransomware"
+    ],
+    "sector": [
+      "healthcare"
+    ],
+    "metrics": [
+      {
+        "name": "incident_count",
+        "value": 238,
+        "unit": "count",
+        "notes": "Confirmed ransomware incidents reported by the U.S. Healthcare sector in 2024."
+      }
+    ],
+    "citationUrl": "https://www.ic3.gov/AnnualReport/Reports/2024_IC3Report.pdf"
+  },
+  {
+    "source": "fbi_ic3_internet_crime_report_2023",
+    "reportTitle": "2023 Internet Crime Report",
+    "organization": "Federal Bureau of Investigation",
+    "publicationDate": "2024-04-04",
+    "scope": "united_states",
+    "bucket": [
+      "ransomware"
+    ],
+    "sector": [
+      "critical_manufacturing"
+    ],
+    "metrics": [
+      {
+        "name": "incident_count",
+        "value": 218,
+        "unit": "count",
+        "notes": "U.S. Critical Manufacturing ransomware incidents reported to IC3 in 2023."
+      }
+    ],
+    "citationUrl": "https://www.ic3.gov/Media/PDF/AnnualReport/2023_IC3Report.pdf"
+  },
+  {
+    "source": "fbi_ic3_internet_crime_report_2024",
+    "reportTitle": "2024 Internet Crime Report",
+    "organization": "Federal Bureau of Investigation",
+    "publicationDate": "2025-04-23",
+    "scope": "united_states",
+    "bucket": [
+      "ransomware"
+    ],
+    "sector": [
+      "critical_manufacturing"
+    ],
+    "metrics": [
+      {
+        "name": "incident_count",
+        "value": 258,
+        "unit": "count",
+        "notes": "U.S. Critical Manufacturing ransomware incidents reported to IC3 in 2024."
+      }
+    ],
+    "citationUrl": "https://www.ic3.gov/AnnualReport/Reports/2024_IC3Report.pdf"
+  },
+  {
+    "source": "fbi_ic3_internet_crime_report_2023",
+    "reportTitle": "2023 Internet Crime Report",
+    "organization": "Federal Bureau of Investigation",
+    "publicationDate": "2024-04-04",
+    "scope": "united_states",
+    "bucket": [
+      "ransomware"
+    ],
+    "sector": [
+      "energy"
+    ],
+    "metrics": [
+      {
+        "name": "incident_count",
+        "value": 30,
+        "unit": "count",
+        "notes": "Ransomware incidents affecting the U.S. Energy sector in 2023."
+      }
+    ],
+    "citationUrl": "https://www.ic3.gov/Media/PDF/AnnualReport/2023_IC3Report.pdf"
+  },
+  {
+    "source": "fbi_ic3_internet_crime_report_2024",
+    "reportTitle": "2024 Internet Crime Report",
+    "organization": "Federal Bureau of Investigation",
+    "publicationDate": "2025-04-23",
+    "scope": "united_states",
+    "bucket": [
+      "ransomware"
+    ],
+    "sector": [
+      "energy"
+    ],
+    "metrics": [
+      {
+        "name": "incident_count",
+        "value": 38,
+        "unit": "count",
+        "notes": "Ransomware incidents affecting the U.S. Energy sector in 2024."
+      }
+    ],
+    "citationUrl": "https://www.ic3.gov/AnnualReport/Reports/2024_IC3Report.pdf"
+  },
+  {
+    "source": "fbi_ic3_internet_crime_report_2023",
+    "reportTitle": "2023 Internet Crime Report",
+    "organization": "Federal Bureau of Investigation",
+    "publicationDate": "2024-04-04",
+    "scope": "united_states",
+    "bucket": [
+      "ransomware"
+    ],
+    "sector": [
+      "transportation"
+    ],
+    "metrics": [
+      {
+        "name": "incident_count",
+        "value": 44,
+        "unit": "count",
+        "notes": "Ransomware incidents in U.S. Transportation Systems sector in 2023."
+      }
+    ],
+    "citationUrl": "https://www.ic3.gov/Media/PDF/AnnualReport/2023_IC3Report.pdf"
+  },
+  {
+    "source": "fbi_ic3_internet_crime_report_2024",
+    "reportTitle": "2024 Internet Crime Report",
+    "organization": "Federal Bureau of Investigation",
+    "publicationDate": "2025-04-23",
+    "scope": "united_states",
+    "bucket": [
+      "ransomware"
+    ],
+    "sector": [
+      "transportation"
+    ],
+    "metrics": [
+      {
+        "name": "incident_count",
+        "value": 57,
+        "unit": "count",
+        "notes": "Ransomware incidents in U.S. Transportation Systems sector in 2024."
+      }
+    ],
+    "citationUrl": "https://www.ic3.gov/AnnualReport/Reports/2024_IC3Report.pdf"
+  },
+  {
+    "source": "fbi_ic3_internet_crime_report_2023",
+    "reportTitle": "2023 Internet Crime Report",
+    "organization": "Federal Bureau of Investigation",
+    "publicationDate": "2024-04-04",
+    "scope": "united_states",
+    "bucket": [
+      "ransomware"
+    ],
+    "sector": [
+      "water_wastewater"
+    ],
+    "metrics": [
+      {
+        "name": "incident_count",
+        "value": 8,
+        "unit": "count",
+        "notes": "Ransomware incidents in the U.S. Water/Wastewater Systems sector in 2023."
+      }
+    ],
+    "citationUrl": "https://www.ic3.gov/Media/PDF/AnnualReport/2023_IC3Report.pdf"
+  },
+  {
+    "source": "fbi_ic3_internet_crime_report_2024",
+    "reportTitle": "2024 Internet Crime Report",
+    "organization": "Federal Bureau of Investigation",
+    "publicationDate": "2025-04-23",
+    "scope": "united_states",
+    "bucket": [
+      "ransomware"
+    ],
+    "sector": [
+      "water_wastewater"
+    ],
+    "metrics": [
+      {
+        "name": "incident_count",
+        "value": 11,
+        "unit": "count",
+        "notes": "Ransomware incidents in the U.S. Water/Wastewater Systems sector in 2024."
+      }
+    ],
+    "citationUrl": "https://www.ic3.gov/AnnualReport/Reports/2024_IC3Report.pdf"
+  },
+  {
+    "source": "fbi_ic3_internet_crime_report_2023",
+    "reportTitle": "2023 Internet Crime Report",
+    "organization": "Federal Bureau of Investigation",
+    "publicationDate": "2024-04-04",
+    "scope": "united_states",
+    "bucket": [
+      "ransomware"
+    ],
+    "sector": [
+      "financial_services"
+    ],
+    "metrics": [
+      {
+        "name": "incident_count",
+        "value": 122,
+        "unit": "count",
+        "notes": "Ransomware incidents in U.S. Financial Services sector in 2023."
+      }
+    ],
+    "citationUrl": "https://www.ic3.gov/Media/PDF/AnnualReport/2023_IC3Report.pdf"
+  },
+  {
+    "source": "fbi_ic3_internet_crime_report_2024",
+    "reportTitle": "2024 Internet Crime Report",
+    "organization": "Federal Bureau of Investigation",
+    "publicationDate": "2025-04-23",
+    "scope": "united_states",
+    "bucket": [
+      "ransomware"
+    ],
+    "sector": [
+      "financial_services"
+    ],
+    "metrics": [
+      {
+        "name": "incident_count",
+        "value": 190,
+        "unit": "count",
+        "notes": "Ransomware incidents in U.S. Financial Services sector in 2024."
+      }
+    ],
+    "citationUrl": "https://www.ic3.gov/AnnualReport/Reports/2024_IC3Report.pdf"
+  }
+]

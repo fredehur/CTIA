@@ -1,0 +1,16 @@
+[
+  {
+    "year": 2022,
+    "fileName": "susb-2022.json",
+    "sourceUrl": "https://www.census.gov/data/tables/2022/econ/susb/2022-susb-annual.html",
+    "checksum": "sha256-placeholder-for-2022-susb-data",
+    "ingestedAt": "2024-07-01T12:00:00Z"
+  },
+  {
+    "sector": "energy",
+    "fileName": "energy.json",
+    "description": "PHMSA/EIA organization counts for Energy subsectors.",
+    "ingestedAt": "2024-07-17T12:00:00Z",
+    "sourceUrl": "https://hip.phmsa.dot.gov/analytics/saw.dll?Portalpages"
+  }
+]

@@ -1,0 +1,16 @@
+[
+  {
+    "year": 2023,
+    "fileName": "ic3-2023.json",
+    "sourceUrl": "https://www.ic3.gov/Media/PDF/AnnualReport/2023_IC3Report.pdf",
+    "checksum": "sha256-placeholder-for-2023-report",
+    "ingestedAt": "2024-07-01T12:00:00Z"
+  },
+  {
+    "year": 2022,
+    "fileName": "ic3-2022.json",
+    "sourceUrl": "https://www.ic3.gov/Media/PDF/AnnualReport/2022_IC3Report.pdf",
+    "checksum": "sha256-placeholder-for-2022-report",
+    "ingestedAt": "2024-07-01T12:00:00Z"
+  }
+]

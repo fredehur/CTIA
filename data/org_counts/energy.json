@@ -1,0 +1,205 @@
+[
+  {
+    "sector": "Energy",
+    "subsector": "Pipelines – Gas Distribution (operators)",
+    "metricDescription": "PHMSA Annual Report ‘Number of records’ (proxy for operator count) – Gas Distribution systems",
+    "year": 2024,
+    "metricValue": 1433,
+    "unit": "count",
+    "organization": "PHMSA",
+    "publicationDate": "live page; reflects Report Year 2024",
+    "citationUrl": "https://hip.phmsa.dot.gov/analytics/saw.dll?Portalpages"
+  },
+  {
+    "sector": "Energy",
+    "subsector": "Pipelines – Gas Distribution (operators)",
+    "metricDescription": "PHMSA Annual Report ‘Number of records’ – Gas Distribution systems",
+    "year": 2023,
+    "metricValue": 1440,
+    "unit": "count",
+    "organization": "PHMSA",
+    "publicationDate": "live page; reflects Report Year 2023",
+    "citationUrl": "https://hip.phmsa.dot.gov/analytics/saw.dll?Portalpages"
+  },
+  {
+    "sector": "Energy",
+    "subsector": "Pipelines – Gas Distribution (operators)",
+    "metricDescription": "PHMSA Annual Report ‘Number of records’ – Gas Distribution systems",
+    "year": 2022,
+    "metricValue": 1448,
+    "unit": "count",
+    "organization": "PHMSA",
+    "publicationDate": "live page; reflects Report Year 2022",
+    "citationUrl": "https://hip.phmsa.dot.gov/analytics/saw.dll?Portalpages"
+  },
+  {
+    "sector": "Energy",
+    "subsector": "Pipelines – Gas Transmission & Gathering (operators)",
+    "metricDescription": "PHMSA Annual Report ‘Number of records’ – Gas Transmission and Gathering systems (combined)",
+    "year": 2024,
+    "metricValue": 1449,
+    "unit": "count",
+    "organization": "PHMSA",
+    "publicationDate": "live page; reflects Report Year 2024",
+    "citationUrl": "https://hip.phmsa.dot.gov/analytics/saw.dll?Portalpages"
+  },
+  {
+    "sector": "Energy",
+    "subsector": "Pipelines – Gas Transmission & Gathering (operators)",
+    "metricDescription": "PHMSA Annual Report ‘Number of records’ – Gas Transmission and Gathering systems (combined)",
+    "year": 2023,
+    "metricValue": 1464,
+    "unit": "count",
+    "organization": "PHMSA",
+    "publicationDate": "live page; reflects Report Year 2023",
+    "citationUrl": "https://hip.phmsa.dot.gov/analytics/saw.dll?Portalpages"
+  },
+  {
+    "sector": "Energy",
+    "subsector": "Pipelines – Gas Transmission & Gathering (operators)",
+    "metricDescription": "PHMSA Annual Report ‘Number of records’ – Gas Transmission and Gathering systems (combined)",
+    "year": 2022,
+    "metricValue": 1464,
+    "unit": "count",
+    "organization": "PHMSA",
+    "publicationDate": "live page; reflects Report Year 2022",
+    "citationUrl": "https://hip.phmsa.dot.gov/analytics/saw.dll?Portalpages"
+  },
+  {
+    "sector": "Energy",
+    "subsector": "Pipelines – Hazardous Liquid & CO₂ (operators)",
+    "metricDescription": "PHMSA Annual Report ‘Number of records’ – Hazardous Liquid pipelines",
+    "year": 2024,
+    "metricValue": 663,
+    "unit": "count",
+    "organization": "PHMSA",
+    "publicationDate": "live page; reflects Report Year 2024",
+    "citationUrl": "https://hip.phmsa.dot.gov/analytics/saw.dll?Portalpages"
+  },
+  {
+    "sector": "Energy",
+    "subsector": "Pipelines – Hazardous Liquid & CO₂ (operators)",
+    "metricDescription": "PHMSA Annual Report ‘Number of records’ – Hazardous Liquid pipelines",
+    "year": 2023,
+    "metricValue": 687,
+    "unit": "count",
+    "organization": "PHMSA",
+    "publicationDate": "live page; reflects Report Year 2023",
+    "citationUrl": "https://hip.phmsa.dot.gov/analytics/saw.dll?Portalpages"
+  },
+  {
+    "sector": "Energy",
+    "subsector": "Pipelines – Hazardous Liquid & CO₂ (operators)",
+    "metricDescription": "PHMSA Annual Report ‘Number of records’ – Hazardous Liquid pipelines",
+    "year": 2022,
+    "metricValue": 683,
+    "unit": "count",
+    "organization": "PHMSA",
+    "publicationDate": "live page; reflects Report Year 2022",
+    "citationUrl": "https://hip.phmsa.dot.gov/analytics/saw.dll?Portalpages"
+  },
+  {
+    "sector": "Energy",
+    "subsector": "Natural Gas – Delivery Companies (entities delivering to end users)",
+    "metricDescription": "Company count delivering gas directly to end-use customers (LDCs and pipelines that deliver to end users)",
+    "year": 2023,
+    "metricValue": 1653,
+    "unit": "count",
+    "organization": "U.S. EIA",
+    "publicationDate": "2025-02-26",
+    "citationUrl": "https://www.eia.gov/todayinenergy/detail.php?id=64624"
+  },
+  {
+    "sector": "Energy",
+    "subsector": "Refining – Operable Petroleum Refineries (facilities)",
+    "metricDescription": "Total number of operable U.S. petroleum refineries",
+    "year": 2025,
+    "metricValue": 132,
+    "unit": "count",
+    "organization": "U.S. EIA (Refinery Capacity Report)",
+    "publicationDate": "2025-06-30",
+    "citationUrl": "https://www.eia.gov/todayinenergy/detail.php?id=65624"
+  },
+  {
+    "sector": "Energy",
+    "subsector": "Refining – Operable Petroleum Refineries (facilities)",
+    "metricDescription": "Total number of operable U.S. petroleum refineries",
+    "year": 2024,
+    "metricValue": 132,
+    "unit": "count",
+    "organization": "U.S. EIA (Refinery Capacity Report)",
+    "publicationDate": "2025-06-20",
+    "citationUrl": "https://www.eia.gov/petroleum/refinerycapacity/"
+  },
+  {
+    "sector": "Energy",
+    "subsector": "Electric Power – Utility-scale Power Plants (facilities)",
+    "metricDescription": "Number of utility-scale electric power plants (≥1 MW) in the U.S.",
+    "year": 2022,
+    "metricValue": 12538,
+    "unit": "count",
+    "organization": "U.S. EIA (FAQ)",
+    "publicationDate": "2023-10-20",
+    "citationUrl": "https://www.eia.gov/tools/faqs/faq.php?id=65&t=2"
+  },
+  {
+    "sector": "Energy",
+    "subsector": "Electric Power – Distribution Utilities (ownership breakdown)",
+    "metricDescription": "Electric distribution companies by ownership; total near 3,000 distribution companies (contextual baseline, 2017)",
+    "year": 2017,
+    "metricValue": 2938,
+    "unit": "count",
+    "breakdown": {
+      "IOU": 168,
+      "PubliclyOwned": 1958,
+      "Cooperative": 812
+    },
+    "organization": "U.S. EIA (Today in Energy)",
+    "publicationDate": "2019-08-15",
+    "citationUrl": "https://www.eia.gov/todayinenergy/detail.php?id=40913"
+  },
+  {
+    "sector": "Energy",
+    "subsector": "LNG – Facilities In Service (facilities)",
+    "metricDescription": "Liquefied Natural Gas (LNG) facilities ‘In Service’ (PHMSA page shows facility counts)",
+    "year": 2024,
+    "metricValue": 178,
+    "unit": "count",
+    "organization": "PHMSA",
+    "publicationDate": "live page; reflects Report Year 2024",
+    "citationUrl": "https://hip.phmsa.dot.gov/analytics/saw.dll?Portalpages"
+  },
+  {
+    "sector": "Energy",
+    "subsector": "LNG – Facilities In Service (facilities)",
+    "metricDescription": "Liquefied Natural Gas (LNG) facilities ‘In Service’",
+    "year": 2023,
+    "metricValue": 176,
+    "unit": "count",
+    "organization": "PHMSA",
+    "publicationDate": "live page; reflects Report Year 2023",
+    "citationUrl": "https://hip.phmsa.dot.gov/analytics/saw.dll?Portalpages"
+  },
+  {
+    "sector": "Energy",
+    "subsector": "Underground Natural Gas Storage – Facilities In Service (facilities)",
+    "metricDescription": "Underground Natural Gas Storage facilities ‘In Service’",
+    "year": 2024,
+    "metricValue": 404,
+    "unit": "count",
+    "organization": "PHMSA",
+    "publicationDate": "live page; reflects Report Year 2024",
+    "citationUrl": "https://hip.phmsa.dot.gov/analytics/saw.dll?Portalpages"
+  },
+  {
+    "sector": "Energy",
+    "subsector": "Underground Natural Gas Storage – Facilities In Service (facilities)",
+    "metricDescription": "Underground Natural Gas Storage facilities ‘In Service’",
+    "year": 2023,
+    "metricValue": 405,
+    "unit": "count",
+    "organization": "PHMSA",
+    "publicationDate": "live page; reflects Report Year 2023",
+    "citationUrl": "https://hip.phmsa.dot.gov/analytics/saw.dll?Portalpages"
+  }
+]

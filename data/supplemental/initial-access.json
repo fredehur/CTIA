@@ -1,0 +1,241 @@
+[
+  {
+    "source": "coveware_state_of_ransomware_2024",
+    "reportTitle": "The 2024 State of Ransomware",
+    "organization": "Coveware / Mastercard",
+    "publicationDate": "2024-01-25",
+    "scope": "global",
+    "bucket": [
+      "ransomware"
+    ],
+    "vector": "phishing",
+    "metrics": [
+      {
+        "name": "share_q4_2023",
+        "value": 0.24,
+        "unit": "ratio",
+        "notes": "24% of ransomware intrusions in Q4 2023 began with phishing."
+      }
+    ],
+    "citationUrl": "https://www.mastercard.com/content/dam/mccom/shared/news-and-trends/insights/2024/the-2024-state-of-ransomware/pdf/849f2630-54d7-4419-a2b7-5b1b4b9c0416.pdf"
+  },
+  {
+    "source": "coveware_state_of_ransomware_2024",
+    "reportTitle": "The 2024 State of Ransomware",
+    "organization": "Coveware / Mastercard",
+    "publicationDate": "2024-01-25",
+    "scope": "global",
+    "bucket": [
+      "ransomware"
+    ],
+    "vector": "rdp_remote_access",
+    "metrics": [
+      {
+        "name": "share_q4_2023",
+        "value": 0.28,
+        "unit": "ratio",
+        "notes": "28% of ransomware intrusions in Q4 2023 leveraged exposed RDP or remote access services."
+      }
+    ],
+    "citationUrl": "https://www.mastercard.com/content/dam/mccom/shared/news-and-trends/insights/2024/the-2024-state-of-ransomware/pdf/849f2630-54d7-4419-a2b7-5b1b4b9c0416.pdf"
+  },
+  {
+    "source": "coveware_state_of_ransomware_2024",
+    "reportTitle": "The 2024 State of Ransomware",
+    "organization": "Coveware / Mastercard",
+    "publicationDate": "2024-01-25",
+    "scope": "global",
+    "bucket": [
+      "ransomware"
+    ],
+    "vector": "software_vulnerabilities",
+    "metrics": [
+      {
+        "name": "share_q4_2023",
+        "value": 0.15,
+        "unit": "ratio",
+        "notes": "15% of ransomware intrusions in Q4 2023 exploited vulnerable software (CVE)."
+      }
+    ],
+    "citationUrl": "https://www.mastercard.com/content/dam/mccom/shared/news-and-trends/insights/2024/the-2024-state-of-ransomware/pdf/849f2630-54d7-4419-a2b7-5b1b4b9c0416.pdf"
+  },
+  {
+    "source": "coveware_payment_rate_q1_2024",
+    "reportTitle": "Only 28% of Ransomware Victims Choose to Pay Ransom",
+    "organization": "Coveware",
+    "publicationDate": "2024-04-22",
+    "scope": "global",
+    "bucket": [
+      "ransomware"
+    ],
+    "vector": "unknown",
+    "metrics": [
+      {
+        "name": "share_q1_2024",
+        "value": 0.4,
+        "unit": "ratio",
+        "notes": "40% of ransomware cases in Q1 2024 had an unidentified initial access vector."
+      }
+    ],
+    "citationUrl": "https://www.hipaajournal.com/28pc-ransomware-victims-pay-ransom/"
+  },
+  {
+    "source": "secureworks_state_of_the_threat_2023",
+    "reportTitle": "Ransomware Dwell Time Hits Low of 24 Hours",
+    "organization": "Secureworks",
+    "publicationDate": "2023-10-05",
+    "scope": "global",
+    "bucket": [
+      "ransomware"
+    ],
+    "vector": "vulnerability_exploit",
+    "metrics": [
+      {
+        "name": "share_mid2022_mid2023",
+        "value": 0.32,
+        "unit": "ratio",
+        "notes": "32% of incidents gained initial access via exploiting public-facing vulnerabilities."
+      }
+    ],
+    "citationUrl": "https://www.secureworks.com/about/press/ransomware-dwell-time-hits-low-of-24-hours"
+  },
+  {
+    "source": "secureworks_state_of_the_threat_2023",
+    "reportTitle": "Ransomware Dwell Time Hits Low of 24 Hours",
+    "organization": "Secureworks",
+    "publicationDate": "2023-10-05",
+    "scope": "global",
+    "bucket": [
+      "ransomware"
+    ],
+    "vector": "stolen_credentials",
+    "metrics": [
+      {
+        "name": "share_mid2022_mid2023",
+        "value": 0.32,
+        "unit": "ratio",
+        "notes": "32% of ransomware incidents originated from stolen/compromised credentials."
+      }
+    ],
+    "citationUrl": "https://www.secureworks.com/about/press/ransomware-dwell-time-hits-low-of-24-hours"
+  },
+  {
+    "source": "secureworks_state_of_the_threat_2023",
+    "reportTitle": "Ransomware Dwell Time Hits Low of 24 Hours",
+    "organization": "Secureworks",
+    "publicationDate": "2023-10-05",
+    "scope": "global",
+    "bucket": [
+      "ransomware"
+    ],
+    "vector": "phishing_malware",
+    "metrics": [
+      {
+        "name": "share_mid2022_mid2023",
+        "value": 0.14,
+        "unit": "ratio",
+        "notes": "14% of incidents began with phishing containing malware payloads."
+      }
+    ],
+    "citationUrl": "https://www.secureworks.com/about/press/ransomware-dwell-time-hits-low-of-24-hours"
+  },
+  {
+    "source": "kaspersky_incident_response_report_2024",
+    "reportTitle": "Kaspersky Incident Response Analyst Report 2024",
+    "organization": "Kaspersky",
+    "publicationDate": "2025-03-12",
+    "scope": "global",
+    "bucket": [
+      "ransomware"
+    ],
+    "vector": "public_facing_applications",
+    "metrics": [
+      {
+        "name": "share_2024",
+        "value": 0.392,
+        "unit": "ratio",
+        "notes": "39.2% of incidents used vulnerable public-facing applications for initial access."
+      }
+    ],
+    "citationUrl": "https://www.kaspersky.com/about/press-releases/valid-accounts-showed-significant-increase-as-initial-attack-vector-in-2024"
+  },
+  {
+    "source": "kaspersky_incident_response_report_2024",
+    "reportTitle": "Kaspersky Incident Response Analyst Report 2024",
+    "organization": "Kaspersky",
+    "publicationDate": "2025-03-12",
+    "scope": "global",
+    "bucket": [
+      "ransomware"
+    ],
+    "vector": "valid_accounts",
+    "metrics": [
+      {
+        "name": "share_2024",
+        "value": 0.314,
+        "unit": "ratio",
+        "notes": "31.4% of incidents used valid accounts (compromised credentials) for initial access."
+      }
+    ],
+    "citationUrl": "https://www.kaspersky.com/about/press-releases/valid-accounts-showed-significant-increase-as-initial-attack-vector-in-2024"
+  },
+  {
+    "source": "kaspersky_incident_response_report_2024",
+    "reportTitle": "Kaspersky Incident Response Analyst Report 2024",
+    "organization": "Kaspersky",
+    "publicationDate": "2025-03-12",
+    "scope": "global",
+    "bucket": [
+      "ransomware"
+    ],
+    "vector": "phishing",
+    "metrics": [
+      {
+        "name": "share_2024",
+        "value": 0.098,
+        "unit": "ratio",
+        "notes": "9.8% of incidents used phishing as the initial vector according to 2024 IR data."
+      }
+    ],
+    "citationUrl": "https://www.kaspersky.com/about/press-releases/valid-accounts-showed-significant-increase-as-initial-attack-vector-in-2024"
+  },
+  {
+    "source": "sonicwall_cyber_threat_report_2024",
+    "reportTitle": "2024 SonicWall Cyber Threat Report",
+    "organization": "SonicWall",
+    "publicationDate": "2024-02-21",
+    "scope": "global",
+    "bucket": [
+      "ransomware"
+    ],
+    "vector": "all",
+    "metrics": [
+      {
+        "name": "attempt_count_2023",
+        "value": 317600000,
+        "unit": "count",
+        "notes": "Total ransomware attack attempts logged worldwide in 2023."
+      }
+    ],
+    "citationUrl": "https://www.sonicwall.com/blog/latest-threat-intelligence-navigates-the-relentless-surge-in-cybercrime"
+  },
+  {
+    "source": "sonicwall_midyear_report_2023",
+    "reportTitle": "2023 Mid-Year SonicWall Cyber Threat Report",
+    "organization": "SonicWall",
+    "publicationDate": "2023-07-26",
+    "scope": "global",
+    "bucket": [
+      "ransomware"
+    ],
+    "vector": "all",
+    "metrics": [
+      {
+        "name": "attempt_count_h1_2023",
+        "value": 140000000,
+        "unit": "count",
+        "notes": "Ransomware attempts detected in the first half of 2023."
+      }
+    ]
+  }
+]

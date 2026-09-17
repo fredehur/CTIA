@@ -1,0 +1,52 @@
+
+[
+  {
+    "bucket": "ransomware",
+    "sector": "critical_manufacturing",
+    "fileName": "critical-manufacturing.json",
+    "description": "Sector-specific ransomware metrics for critical manufacturing, including IBM X-Force, NCC Group, Sophos, and FBI IC3 data.",
+    "ingestedAt": "2024-07-15T12:00:00Z"
+  },
+  {
+    "bucket": "ransomware",
+    "sector": "critical_infrastructure",
+    "fileName": "critical-infra-ic3.json",
+    "description": "FBI IC3 sector-level ransomware incident counts for U.S. critical infrastructure (Healthcare, Manufacturing, Energy, Transportation, Water, Financial Services).",
+    "ingestedAt": "2024-07-15T12:10:00Z"
+  },
+  {
+    "bucket": "supplemental",
+    "topic": "major_campaigns",
+    "fileName": "major-campaigns.json",
+    "description": "Metrics on major, well-known cyber campaigns like MOVEit (Clop) and LockBit 3.0.",
+    "ingestedAt": "2024-07-15T12:15:00Z"
+  },
+  {
+    "bucket": "supplemental",
+    "topic": "major_campaigns",
+    "fileName": "wizard-spider.json",
+    "description": "Specific metrics on Wizard Spider campaigns (Conti, Ryuk).",
+    "ingestedAt": "2024-07-16T10:00:00Z"
+  },
+  {
+    "bucket": "supplemental",
+    "topic": "major_campaigns",
+    "fileName": "gold-southfield.json",
+    "description": "Specific metrics on Gold Southfield campaigns (REvil/Sodinokibi).",
+    "ingestedAt": "2024-07-17T14:00:00Z"
+  },
+  {
+    "bucket": "supplemental",
+    "topic": "initial_access",
+    "fileName": "initial-access.json",
+    "description": "Data on common initial access vectors for ransomware from various CTI reports.",
+    "ingestedAt": "2024-07-15T12:20:00Z"
+  },
+  {
+    "bucket": "supplemental",
+    "topic": "nation_state_actors",
+    "fileName": "iran-actors.json",
+    "description": "Specific metrics on Iranian threat actor campaigns and targeting.",
+    "ingestedAt": "2024-07-15T12:25:00Z"
+  }
+]
