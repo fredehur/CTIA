@@ -200,10 +200,19 @@ export const extractKeyStatistic = async (actor: string, mo: string, title: stri
     return response.text?.trim() || "N/A";
 };
 
-export const generateThreatLandscape = async (orgProfile: string, period: { startDate: string, endDate: string, name: string }, numTrends: number, guidance?: string) => {
-    let identifyPrompt = `Identify top ${numTrends} cyber threat trends for: ${orgProfile}, period: ${period.name}. JSON: { "reportTitle": "string", "trendTitles": ["string"] }`;
+export const generateThreatLandscape = async (
+    orgProfile: string, 
+    period: { startDate: string, endDate: string, name: string }, 
+    numTrends: number, 
+    guidance?: string,
+    isOutlookMode?: boolean
+) => {
+    let identifyPrompt = isOutlookMode
+        ? `You are a Senior Cyber Threat Intelligence Analyst conducting a strategic Forward Threat Outlook for the quarterly horizon: ${period.name}.\nIdentify and project the top ${numTrends} emerging cyber threat trends and adversarial campaigns anticipated to impact: ${orgProfile}.\nFocus specifically on forward-looking trajectories, emerging TTPs, predicted campaign escalations, and anticipatory defensive postures.\nJSON: { "reportTitle": "Threat Landscape & Strategic Outlook (${period.name})", "trendTitles": ["string"] }`
+        : `Identify top ${numTrends} cyber threat trends for: ${orgProfile}, period: ${period.name}. JSON: { "reportTitle": "string", "trendTitles": ["string"] }`;
+    
     if (guidance && guidance.trim() !== '') {
-        identifyPrompt = `Identify top ${numTrends} cyber threat trends for: ${orgProfile}, period: ${period.name}.\n\nPlease ensure the generated trends incorporate or align with the following guidance/specific events: ${guidance}\n\nJSON: { "reportTitle": "string", "trendTitles": ["string"] }`;
+        identifyPrompt += `\n\nPlease ensure the generated trends incorporate or align with the following guidance/specific events: ${guidance}`;
     }
     const identityResponse = await retry(() => ai.models.generateContent({
         model: 'gemini-3-flash-preview',
@@ -217,12 +226,17 @@ export const generateThreatLandscape = async (orgProfile: string, period: { star
     const detailedTrends: ThreatLandscapeTrend[] = [];
 
     for (const title of identityData.trendTitles) {
-        let detailPrompt = `Analyze trend "${title}" for ${orgProfile}. 
-        Format globalImpact and organizationalImpact as: "**Headline**\nParagraph.\n- Bullet 1\n- Bullet 2".
-        Output ONLY a JSON block (no other text) like: { "globalImpact": "string", "organizationalImpact": "string", "mitreTechniques": [{"id": "string", "name": "string"}] }`;
+        let detailPrompt = isOutlookMode
+            ? `Analyze the forward-looking threat trend "${title}" for ${orgProfile} across the ${period.name} horizon.
+            Evaluate projected adversary capabilities, anticipated attack progressions, and early warning risk indicators.
+            Format globalImpact and organizationalImpact as: "**Strategic Horizon Outlook (${period.name})**\nParagraph analyzing anticipated threat evolution.\n- Forward Indicator / Warning Signal 1\n- Forward Indicator / Warning Signal 2".
+            Output ONLY a JSON block (no other text) like: { "globalImpact": "string", "organizationalImpact": "string", "mitreTechniques": [{"id": "string", "name": "string"}] }`
+            : `Analyze trend "${title}" for ${orgProfile} over ${period.name}. 
+            Format globalImpact and organizationalImpact as: "**Headline**\nParagraph.\n- Bullet 1\n- Bullet 2".
+            Output ONLY a JSON block (no other text) like: { "globalImpact": "string", "organizationalImpact": "string", "mitreTechniques": [{"id": "string", "name": "string"}] }`;
         
         if (guidance && guidance.trim() !== '') {
-            detailPrompt = `Analyze trend "${title}" for ${orgProfile}. Special user guidance/context to incorporate if relevant: ${guidance}\n\nFormat globalImpact and organizationalImpact as: "**Headline**\nParagraph.\n- Bullet 1\n- Bullet 2".\nOutput ONLY a JSON block (no other text) like: { "globalImpact": "string", "organizationalImpact": "string", "mitreTechniques": [{"id": "string", "name": "string"}] }`;
+            detailPrompt += `\n\nSpecial user guidance/context to incorporate if relevant: ${guidance}`;
         }
 
         const response = await retry(() => generateContentWithSearchFallback({
@@ -242,19 +256,23 @@ export const generateThreatLandscape = async (orgProfile: string, period: { star
         } as ThreatLandscapeTrend);
     }
 
-    return { reportTitle: identityData.reportTitle || "Report", trends: detailedTrends } as ThreatLandscapeResult;
+    return { reportTitle: identityData.reportTitle || (isOutlookMode ? `Threat Landscape & Outlook (${period.name})` : "Report"), trends: detailedTrends } as ThreatLandscapeResult;
 };
 
-export const generateThreatMatrixPreview = async (orgProfile: string, period: any) => {
-    const prompt = `Identify 4 threat themes (Nation State/Criminal vs Tech/Geo) for ${orgProfile}. JSON: { "reportTitle": "string", "nationStateTechTitle": "string", ... }`;
+export const generateThreatMatrixPreview = async (orgProfile: string, period: any, isOutlookMode?: boolean) => {
+    const prompt = isOutlookMode
+        ? `You are a Senior CTI Analyst conducting a Cyber Threat Outlook. Identify 4 forward-looking threat themes (Nation State/Criminal vs Tech/Geo) projected across the ${period.name} horizon for ${orgProfile}. Emphasize emerging capabilities, upcoming attack vectors, and future strategic exposure. JSON: { "reportTitle": "Threat Matrix & Strategic Outlook (${period.name})", "nationStateTechTitle": "string", "criminalTechTitle": "string", "nationStateGeoTitle": "string", "criminalGeoTitle": "string" }`
+        : `Identify 4 threat themes (Nation State/Criminal vs Tech/Geo) for ${orgProfile} over ${period.name}. JSON: { "reportTitle": "string", "nationStateTechTitle": "string", "criminalTechTitle": "string", "nationStateGeoTitle": "string", "criminalGeoTitle": "string" }`;
     return await retry(async () => {
         const response = await ai.models.generateContent({ model: 'gemini-3-flash-preview', contents: prompt, config: { responseMimeType: 'application/json' } });
         return JSON.parse(cleanJson(response.text || '{}')) as ThreatMatrixPreview;
     });
 };
 
-export const generateThreatMatrix = async (orgProfile: string, period: any, preview: ThreatMatrixPreview) => {
-    const prompt = `Generate threat matrix report for ${orgProfile} based on themes: ${JSON.stringify(preview)}. Output ONLY a JSON block with detailed quadrants (no other text).`;
+export const generateThreatMatrix = async (orgProfile: string, period: any, preview: ThreatMatrixPreview, isOutlookMode?: boolean) => {
+    const prompt = isOutlookMode
+        ? `Generate a comprehensive forward-looking threat matrix outlook report for ${orgProfile} across ${period.name} based on themes: ${JSON.stringify(preview)}. Emphasize anticipatory indicators, expected adversary maneuvers, and mitigation horizons. Output ONLY a JSON block with detailed quadrants (no other text).`
+        : `Generate threat matrix report for ${orgProfile} based on themes: ${JSON.stringify(preview)}. Output ONLY a JSON block with detailed quadrants (no other text).`;
     return await retry(async () => {
         const response = await generateContentWithSearchFallback({
             model: 'gemini-3-flash-preview',
@@ -377,51 +395,63 @@ export const generateMemorandumForTrend = async (title: string, global: string, 
     });
 };
 
-export const generateMemorandumForEvent = async (event: string, profile: string, audience: string, context: string) => {
+export const generateMemorandumForEvent = async (
+    event: string, 
+    profile: string, 
+    audience: string, 
+    context: string,
+    period?: { startDate: string, endDate: string, name: string },
+    isOutlookMode?: boolean
+) => {
+    const horizonText = period?.name || 'Upcoming Strategic Horizon';
     const prompt = `
-    You are a Senior Cyber Threat Intelligence Analyst. Write a formal Intelligence Memorandum regarding the specific event below, strictly following the standard Intelligence Briefing Memorandum template.
+    You are a Senior Cyber Threat Intelligence Analyst writing a formal Intelligence Briefing Memorandum for organizational leadership and security operations.
+    
+    Adopt the exact analytical tone, structure, and vocabulary found in premier defense and intelligence briefing memorandums (such as Danish Defence Intelligence Service and European Critical Infrastructure threat briefings):
+    - Tone: Objective, authoritative, calibrated, unvarnished. Use calibrated intelligence phrasing ("offers an assessment of", "assessed to be potential targets", "safe to conclude", "shows the willingness to utilise hybrid operations as a mean to communicate aggressively while maintaining escalation control", "reflects a general trend of increasing tensions").
+    - Focus: Cut straight to what matters. Focus on state actor intent, hybrid warfare, cyber and kinetic convergence, undersea/energy/IT/OT critical infrastructure exposure, escalation control, and direct operational relevance to the organization.
+    - No filler, no SaaS buzzwords, no generic advice.
     
     Event Topic: ${event}
     Target Audience: ${audience}
     Organization Profile: ${profile}
+    Temporal Window / Horizon: ${horizonText}
+    Analysis Mode: ${isOutlookMode ? `FORWARD-LOOKING THREAT OUTLOOK (${horizonText}) — Emphasize anticipatory threat intelligence, projected adversary evolution, trajectory across the quarterly window, horizon indicators, and strategic defensive posture.` : `Current Event & Operational Impact Analysis (${horizonText})`}
     Additional Context: ${context}
     
-    Perform research to gather the latest, detailed information on this event and synthesize it thoroughly.
+    Perform Google Search research to obtain accurate, concrete, up-to-date facts, dates, actors, vessels, weapons, threat actor names, and agency statements relevant to this topic.
     
     You MUST output valid JSON matching this exact structure:
     {
-      "title": "Memorandum — ${event} outlook",
-      "introduction": "Brief overview of the situation:\n- [Bullet 1: Direct factual synopsis of what occurred, where, when, and key actors involved]\n- [Bullet 2: Relevant context, historical precedent, geopolitical background, or infrastructure impact]",
-      "purpose": "Provide a concise and comprehensive assessment of the given situation, focusing on specific points of concern and offering actionable recommendations.",
-      "pointsOfConcern": [
-        "[Point 1: Key tactical/technical vector or exploitation mechanism of concern]",
-        "[Point 2: Key operational or infrastructure vulnerability exposed]",
-        "[Point 3: Key strategic, regulatory, or cascading risk to the organization]"
+      "title": "Memorandum – ${event}${isOutlookMode ? ` Outlook (${horizonText})` : ''}",
+      "reflectionStatement": "This memorandum is a reflection on the updated threat assessment and recent operational developments as of ${horizonText}.",
+      "purpose": "This memorandum offers an assessment of the situation surrounding ${event} as of ${horizonText}, relevant to the organization's risk exposure, including:",
+      "purposePoints": [
+        "1. [First specific core development, incident, or intelligence disclosure]",
+        "2. [Second specific core development, escalation indicator, or weapon/tactic observed]"
       ],
-      "assessment": "- [Assessment 1: High-confidence analytical conclusion regarding adversary objectives and immediate threat level]\n- [Assessment 2: Assessment of vulnerability and potential impact on ${profile}]\n- [Assessment 3: Strategic outlook and critical actionable defensive posture recommended for ${audience}]",
-      "detailedAnalysis": [
+      "events": [
         {
-          "pointTitle": "Paragraph 1: Elaboration on point 1",
-          "analysis": "Comprehensive analytic paragraph explaining the technical mechanics, attack progression, and threat vectors."
+          "date": "[Specific Date, e.g. November 19th, 2024 or Q1-Q2 2025]",
+          "headline": "[Concise factual headline]",
+          "description": "[Factual narrative detailing what occurred: actors, flags, vessels, physical or cyber cuts, systems disrupted, weapons deployed, or intelligence agency notices released. Explain the physical/technical mechanics with high signal.]"
         },
         {
-          "pointTitle": "Paragraph 2: Elaboration on point 2",
-          "analysis": "Comprehensive analytic paragraph evaluating threat actor capabilities, infrastructure targeting, and weaponization."
-        },
-        {
-          "pointTitle": "Paragraph 3: Elaboration on point 3",
-          "analysis": "Comprehensive analytic paragraph analyzing organizational consequences, supply chain risks, and escalation indicators."
+          "date": "[Specific Date, e.g. November 21st, 2024 or Q3-Q4 2025]",
+          "headline": "[Concise factual headline]",
+          "description": "[Second factual narrative detailing subsequent escalation, alert level shift, or retaliatory action.]"
         }
       ],
-      "biasChallenges": [
-        {
-          "challenge": "Attribution Bias / Premature Closure",
-          "proposedSolution": "Separating direct technical IOC correlation from strategic geopolitical motivation, continuously testing alternate hypotheses."
-        },
-        {
-          "challenge": "Overestimating or Underestimating Threat Actor Capability",
-          "proposedSolution": "Benchmarking observed TTPs against verified MITRE ATT&CK techniques rather than media reporting or rhetoric."
-        }
+      "context": "[1-2 analytical paragraphs detailing the geopolitical catalyst, preceding policy shifts, sanctions, weapons authorizations, or retaliatory cycles driving the adversary's actions (e.g. why this occurred at this moment in the broader confrontation).]",
+      "analysis": "[Detailed operational and technical analysis translating these events directly to the organization (${profile}) and target audience (${audience}). Specifically address IT vs OT (operational technology controlling grid/wind/subsea/SCADA/ICS assets) exposure, transit vulnerability, target attractiveness, and how adversary hybrid playbooks exploit grey areas of international law.]",
+      "conclusions": [
+        "[Analytical conclusion on adversary willingness and escalation management: e.g. how hybrid operations are used to communicate aggressively while maintaining escalation control]",
+        "[Analytical conclusion on adversary cooperation, covert assistance, or grey-zone tactics (e.g. Russia-China nexus, proxy vessels, flags of convenience)]",
+        "[Actionable conclusion on organizational posture, detection indicators, and critical resilience priorities tailored for ${audience}]"
+      ],
+      "specificPointsToHighlight": [
+        "• Russian Aggression and Hybrid Warfare: [Concise evaluation of adversary intent, influence operations, and willingness to target critical society functions.]",
+        "• Cyber & Kinetic Threats to Infrastructure: [Specific assessment of unrelenting state actor threats, transit vulnerabilities, and deterrence signaling.]"
       ]
     }
     `;
@@ -436,16 +466,54 @@ export const generateMemorandumForEvent = async (event: string, profile: string,
         });
         
         const data = JSON.parse(cleanJson(response.text || '{}'));
+
+        // Handle events array or string
+        const eventsData = Array.isArray(data.events) 
+            ? data.events 
+            : (typeof data.events === 'string' && data.events ? [data.events] : []);
+
+        // Handle purposePoints array or string
+        const purposePointsData = Array.isArray(data.purposePoints)
+            ? data.purposePoints
+            : (typeof data.purposePoints === 'string' ? [data.purposePoints] : []);
+
+        // Handle conclusions array or string
+        const conclusionsData = Array.isArray(data.conclusions)
+            ? data.conclusions
+            : (typeof data.conclusions === 'string' ? [data.conclusions] : []);
+
+        // Build backwards-compatible fields
+        const fallbackIntroduction = eventsData.map((e: any) => {
+            if (typeof e === 'string') return e;
+            return `${e.date ? `${e.date}: ` : ''}${e.headline ? `${e.headline} — ` : ''}${e.description || ''}`;
+        }).join('\n\n') || data.context || "Situation overview not available.";
+
+        const fallbackAssessment = Array.isArray(data.conclusions) && data.conclusions.length > 0
+            ? data.conclusions.join('\n\n')
+            : (data.analysis || "Assessment not available.");
+
         return {
-            title: data.title || `Memorandum — ${event}`,
-            introduction: data.introduction || data.situation || "Brief overview of the situation not available.",
-            purpose: data.purpose || "Provide a concise and comprehensive assessment of the given situation, focusing on specific points of concern and offering actionable recommendations.",
-            pointsOfConcern: Array.isArray(data.pointsOfConcern) ? data.pointsOfConcern : [],
-            assessment: data.assessment || "Assessment not available.",
-            detailedAnalysis: data.detailedAnalysis || [],
+            title: data.title || `Memorandum – ${event}${isOutlookMode ? ` Outlook (${horizonText})` : ''}`,
+            dateOrHorizon: horizonText,
+            reflectionStatement: data.reflectionStatement || `This memorandum is a reflection on recent operational developments as of ${horizonText}.`,
+            purpose: data.purpose || `This memorandum offers an assessment of ${event} as of ${horizonText}, relevant to the organization's risk exposure:`,
+            purposePoints: purposePointsData,
+            events: eventsData,
+            context: data.context || data.introduction || "Context not provided.",
+            analysis: data.analysis || "Operational analysis not provided.",
+            conclusions: conclusionsData,
+            specificPointsToHighlight: Array.isArray(data.specificPointsToHighlight) ? data.specificPointsToHighlight : [],
+            
+            // Backward-compatibility mappings
+            introduction: fallbackIntroduction,
+            pointsOfConcern: purposePointsData.length > 0 ? purposePointsData : (Array.isArray(data.pointsOfConcern) ? data.pointsOfConcern : []),
+            assessment: fallbackAssessment,
+            detailedAnalysis: data.analysis ? [{ pointTitle: `Analysis & Relevance to ${profile}`, analysis: data.analysis }] : (data.detailedAnalysis || []),
             biasChallenges: data.biasChallenges || [],
-            situation: data.introduction || data.situation || "Situation not specified.",
-            considerations: Array.isArray(data.pointsOfConcern) ? data.pointsOfConcern.join('\n- ') : (data.considerations || "No considerations provided.")
+            period: period?.name,
+            isOutlookMode: isOutlookMode,
+            situation: fallbackIntroduction,
+            considerations: conclusionsData.join('\n- ')
         } as Memorandum;
     });
 };

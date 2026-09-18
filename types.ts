@@ -100,15 +100,32 @@ export interface DetailedAnalysisPoint {
   analysis: string;
 }
 
+export interface MemorandumEventItem {
+  date?: string;
+  headline?: string;
+  description: string;
+}
+
 export interface Memorandum {
   title?: string;
-  introduction?: string; // Brief overview of the situation & context
+  dateOrHorizon?: string;
+  reflectionStatement?: string;
   purpose: string;
+  purposePoints?: string[]; // e.g. ["1. The possible hybrid warfare...", "2. The use of an ICBM..."]
+  events?: (MemorandumEventItem | string)[] | string; // Chronological dated events
+  context?: string; // Geopolitical background, retaliatory cycles, preceding policy shifts
+  analysis?: string; // Operational & technical analysis, IT vs OT, critical infrastructure
+  conclusions?: string[] | string; // Conclusions and impacts to the org and customers
+  specificPointsToHighlight?: string[] | string; // Highlighted points e.g. Russian Aggression, Cyber Threats
+  
+  // Backward compatibility fields:
+  introduction?: string; // Brief overview of the situation & context
   pointsOfConcern?: string[]; // Specific points of concern / Main areas of concern
-  assessment: string; // Key assessments (bulleted or string)
+  assessment?: string; // Key assessments (bulleted or string)
   detailedAnalysis?: (DetailedAnalysisPoint | string)[] | string; // Elaboration paragraphs corresponding to points
   biasChallenges?: (AnalyticalBiasChallenge | string)[] | string; // Biases or analytical challenges with proposed solutions
-  // Backward compatibility fields:
+  period?: string;
+  isOutlookMode?: boolean;
   situation?: string;
   considerations?: string;
 }
@@ -120,6 +137,8 @@ export interface SavedMemorandum {
   targetAudience: string;
   orgProfile: string;
   memorandum: Memorandum;
+  period?: string;
+  isOutlookMode?: boolean;
 }
 
 export interface TailoredAnalysis {

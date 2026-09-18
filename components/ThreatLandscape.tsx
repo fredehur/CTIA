@@ -24,6 +24,43 @@ function isTopTrendsResult(result: any): result is ThreatLandscapeResult {
 
 const AUDIENCES = ['Technician', 'Manufacturing', 'SOC', 'Leadership', 'CISO', 'System Owner'];
 
+export const ORG_PROFILE_PRESETS = [
+    {
+        label: 'Large European critical infrastructure provider',
+        shortLabel: 'Large European Critical Infrastructure',
+        value: 'Large European critical infrastructure provider (energy transmission, power grid operations, SCADA/ICS distribution, and cross-border interconnectors).'
+    },
+    {
+        label: 'US Healthcare provider',
+        shortLabel: 'US Healthcare Provider',
+        value: 'A mid-sized US healthcare provider specializing in patient data management and electronic health records.'
+    },
+    {
+        label: 'Financial Services & Banking',
+        shortLabel: 'Financial Services & Banking',
+        value: 'Global financial services institution handling multi-currency cross-border payment clearing and retail banking.'
+    }
+];
+
+const QUARTERS = [
+    { value: 1, label: 'Q1 (Jan – Mar)' },
+    { value: 2, label: 'Q2 (Apr – Jun)' },
+    { value: 3, label: 'Q3 (Jul – Sep)' },
+    { value: 4, label: 'Q4 (Oct – Dec)' },
+];
+
+const YEARS = [2023, 2024, 2025, 2026, 2027, 2028];
+
+const getQuarterDateRange = (sQ: number, sY: number, eQ: number, eY: number): { startDate: string; endDate: string; name: string } => {
+    const qStartMonth = ['01-01', '04-01', '07-01', '10-01'][sQ - 1] || '01-01';
+    const qEndMonth = ['03-31', '06-30', '09-30', '12-31'][eQ - 1] || '09-30';
+    return {
+        startDate: `${sY}-${qStartMonth}`,
+        endDate: `${eY}-${qEndMonth}`,
+        name: `Q${sQ} ${sY} – Q${eQ} ${eY}`
+    };
+};
+
 // --- UTILITY FUNCTIONS ---
 const getTimePeriod = (period: 'last_quarter' | 'last_6_months' | 'last_year'): { startDate: string; endDate: string; name: string } => {
     const endDate = new Date();
@@ -40,6 +77,229 @@ const getTimePeriod = (period: 'last_quarter' | 'last_6_months' | 'last_year'): 
             startDate.setFullYear(startDate.getFullYear() - 1);
             return { startDate: startDate.toISOString().split('T')[0], endDate: endDate.toISOString().split('T')[0], name: 'Last Year' };
     }
+};
+
+const QuarterlyWindowSelector: React.FC<{
+    periodMode: 'quarterly' | 'relative';
+    setPeriodMode: (mode: 'quarterly' | 'relative') => void;
+    startQuarter: number;
+    setStartQuarter: (q: number) => void;
+    startYear: number;
+    setStartYear: (y: number) => void;
+    endQuarter: number;
+    setEndQuarter: (q: number) => void;
+    endYear: number;
+    setEndYear: (y: number) => void;
+    timePeriod: 'last_quarter' | 'last_6_months' | 'last_year';
+    setTimePeriod: (p: 'last_quarter' | 'last_6_months' | 'last_year') => void;
+    isOutlookMode: boolean;
+    setIsOutlookMode: React.Dispatch<React.SetStateAction<boolean>>;
+    activePeriod: { startDate: string; endDate: string; name: string };
+    disabled?: boolean;
+}> = ({
+    periodMode,
+    setPeriodMode,
+    startQuarter,
+    setStartQuarter,
+    startYear,
+    setStartYear,
+    endQuarter,
+    setEndQuarter,
+    endYear,
+    setEndYear,
+    timePeriod,
+    setTimePeriod,
+    isOutlookMode,
+    setIsOutlookMode,
+    activePeriod,
+    disabled = false
+}) => {
+    const selectClass = "w-full bg-surface border border-border rounded-md px-2.5 py-1 text-xs text-text-primary focus:outline-none focus:ring-1 focus:ring-accent-primary transition-colors h-8";
+
+    return (
+        <div className="p-3.5 bg-surface/40 border border-border rounded-lg space-y-3">
+            <div className="flex flex-wrap items-center justify-between gap-2">
+                <div className="flex items-center gap-2 flex-wrap">
+                    <span className="text-xs font-semibold text-text-primary tracking-wide uppercase">
+                        Temporal Horizon & Analysis Mode
+                    </span>
+                    <span className="text-[11px] px-2 py-0.5 rounded font-mono font-medium bg-border/60 text-text-primary border border-border">
+                        {activePeriod.name}
+                    </span>
+                </div>
+
+                {/* Outlook Mode Toggle Button - Can be active at the same time */}
+                <button
+                    type="button"
+                    onClick={() => setIsOutlookMode(prev => !prev)}
+                    disabled={disabled}
+                    className={`flex items-center gap-2 px-3 py-1 rounded-md text-xs font-semibold border transition-all cursor-pointer ${
+                        isOutlookMode
+                            ? 'bg-emerald-950/70 border-emerald-500 text-emerald-300 shadow-sm ring-1 ring-emerald-500/40'
+                            : 'bg-surface hover:bg-border border-border text-text-secondary'
+                    }`}
+                    title="Toggle forward-looking threat forecasting vs retrospective review (can be active concurrently with quarterly window)"
+                >
+                    <span>🔭</span>
+                    <span>Outlook Mode: {isOutlookMode ? 'ACTIVE' : 'OFF'}</span>
+                    <span className={`w-2 h-2 rounded-full ${isOutlookMode ? 'bg-emerald-400 animate-pulse' : 'bg-neutral-500'}`} />
+                </button>
+            </div>
+
+            {/* Mode Tabs: Quarterly Range vs Relative Window */}
+            <div className="flex items-center justify-between flex-wrap gap-2 pt-1 border-t border-border/50">
+                <div className="flex rounded-md p-0.5 bg-background border border-border text-xs">
+                    <button
+                        type="button"
+                        onClick={() => setPeriodMode('quarterly')}
+                        disabled={disabled}
+                        className={`px-3 py-1 rounded font-medium transition-all ${
+                            periodMode === 'quarterly'
+                                ? 'bg-accent-primary text-white shadow-xs'
+                                : 'text-text-secondary hover:text-text-primary'
+                        }`}
+                    >
+                        Quarterly Range
+                    </button>
+                    <button
+                        type="button"
+                        onClick={() => setPeriodMode('relative')}
+                        disabled={disabled}
+                        className={`px-3 py-1 rounded font-medium transition-all ${
+                            periodMode === 'relative'
+                                ? 'bg-accent-primary text-white shadow-xs'
+                                : 'text-text-secondary hover:text-text-primary'
+                        }`}
+                    >
+                        Relative Window
+                    </button>
+                </div>
+
+                {periodMode === 'quarterly' && (
+                    <div className="flex items-center gap-1.5 flex-wrap text-xs">
+                        <span className="text-text-secondary text-[11px]">Range Presets:</span>
+                        <button
+                            type="button"
+                            onClick={() => {
+                                setStartQuarter(1);
+                                setStartYear(2024);
+                                setEndQuarter(3);
+                                setEndYear(2026);
+                            }}
+                            className={`px-2 py-0.5 rounded text-[11px] border transition-colors ${
+                                startQuarter === 1 && startYear === 2024 && endQuarter === 3 && endYear === 2026
+                                    ? 'bg-accent-primary/20 border-accent-primary text-accent-primary font-bold'
+                                    : 'bg-surface hover:bg-border text-text-primary border-border'
+                            }`}
+                        >
+                            Q1 2024 – Q3 2026
+                        </button>
+                        <button
+                            type="button"
+                            onClick={() => {
+                                setStartQuarter(1);
+                                setStartYear(2025);
+                                setEndQuarter(4);
+                                setEndYear(2026);
+                            }}
+                            className="px-2 py-0.5 rounded bg-surface hover:bg-border text-text-primary text-[11px] border border-border transition-colors"
+                        >
+                            Q1 2025 – Q4 2026
+                        </button>
+                        <button
+                            type="button"
+                            onClick={() => {
+                                setStartQuarter(1);
+                                setStartYear(2026);
+                                setEndQuarter(4);
+                                setEndYear(2027);
+                            }}
+                            className="px-2 py-0.5 rounded bg-surface hover:bg-border text-text-primary text-[11px] border border-border transition-colors"
+                        >
+                            2026 – 2027 Outlook
+                        </button>
+                    </div>
+                )}
+            </div>
+
+            {/* Range Selectors */}
+            {periodMode === 'quarterly' ? (
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-2.5 pt-1">
+                    <div>
+                        <label className="block text-[11px] font-medium text-text-secondary mb-1">From Quarter</label>
+                        <select
+                            value={startQuarter}
+                            onChange={(e) => setStartQuarter(Number(e.target.value))}
+                            className={selectClass}
+                            disabled={disabled}
+                        >
+                            {QUARTERS.map(q => <option key={q.value} value={q.value}>{q.label}</option>)}
+                        </select>
+                    </div>
+                    <div>
+                        <label className="block text-[11px] font-medium text-text-secondary mb-1">From Year</label>
+                        <select
+                            value={startYear}
+                            onChange={(e) => setStartYear(Number(e.target.value))}
+                            className={selectClass}
+                            disabled={disabled}
+                        >
+                            {YEARS.map(y => <option key={y} value={y}>{y}</option>)}
+                        </select>
+                    </div>
+                    <div>
+                        <label className="block text-[11px] font-medium text-text-secondary mb-1">To Quarter</label>
+                        <select
+                            value={endQuarter}
+                            onChange={(e) => setEndQuarter(Number(e.target.value))}
+                            className={selectClass}
+                            disabled={disabled}
+                        >
+                            {QUARTERS.map(q => <option key={q.value} value={q.value}>{q.label}</option>)}
+                        </select>
+                    </div>
+                    <div>
+                        <label className="block text-[11px] font-medium text-text-secondary mb-1">To Year</label>
+                        <select
+                            value={endYear}
+                            onChange={(e) => setEndYear(Number(e.target.value))}
+                            className={selectClass}
+                            disabled={disabled}
+                        >
+                            {YEARS.map(y => <option key={y} value={y}>{y}</option>)}
+                        </select>
+                    </div>
+                </div>
+            ) : (
+                <div className="pt-1 max-w-sm">
+                    <label className="block text-[11px] font-medium text-text-secondary mb-1">Relative Window</label>
+                    <select
+                        value={timePeriod}
+                        onChange={(e) => setTimePeriod(e.target.value as any)}
+                        className={selectClass}
+                        disabled={disabled}
+                    >
+                        <option value="last_quarter">Last Quarter (Trailing 3 Months)</option>
+                        <option value="last_6_months">Last 6 Months (Trailing Half-Year)</option>
+                        <option value="last_year">Last Year (Trailing 12 Months)</option>
+                    </select>
+                </div>
+            )}
+
+            {/* Informational Guidance bar */}
+            <div className="flex items-center gap-2 text-[11px] pt-1">
+                {isOutlookMode ? (
+                    <span className="text-emerald-400 font-medium">
+                        🔭 Outlook Mode Active: Anticipatory threat intelligence, adversary trajectories, and predictive defensive postures will be projected across {activePeriod.name}.
+                    </span>
+                ) : (
+                    <span className="text-text-secondary">
+                        Standard Review: Analysis will evaluate reported incidents and observed telemetry across {activePeriod.name}.
+                    </span>
+                )}
+            </div>
+        </div>
+    );
 };
 
 const formatTopTrendsForClipboard = (report: ThreatLandscapeResult): string => {
@@ -632,11 +892,25 @@ const MatrixPreviewView: React.FC<{
 // --- MAIN COMPONENT ---
 export const ThreatLandscape: React.FC = () => {
     const [landscapeMode, setLandscapeMode] = useState<'trends' | 'matrix' | 'event'>('trends');
-    const [orgProfile, setOrgProfile] = useState<string>('A mid-sized US healthcare provider specializing in patient data management.');
+    const [orgProfile, setOrgProfile] = useState<string>('Large European critical infrastructure provider (energy transmission, power grid operations, SCADA/ICS distribution, and cross-border interconnectors).');
+    const [periodMode, setPeriodMode] = useState<'quarterly' | 'relative'>('quarterly');
+    const [startQuarter, setStartQuarter] = useState<number>(1);
+    const [startYear, setStartYear] = useState<number>(2024);
+    const [endQuarter, setEndQuarter] = useState<number>(3);
+    const [endYear, setEndYear] = useState<number>(2026);
     const [timePeriod, setTimePeriod] = useState<'last_quarter' | 'last_6_months' | 'last_year'>('last_quarter');
+    const [isOutlookMode, setIsOutlookMode] = useState<boolean>(true);
+
+    const activePeriod = useMemo(() => {
+        if (periodMode === 'quarterly') {
+            return getQuarterDateRange(startQuarter, startYear, endQuarter, endYear);
+        }
+        return getTimePeriod(timePeriod);
+    }, [periodMode, startQuarter, startYear, endQuarter, endYear, timePeriod]);
+
     const [numTrends, setNumTrends] = useState<number>(3);
     const [trendGuidance, setTrendGuidance] = useState<string>('');
-    const [eventDescription, setEventDescription] = useState('Unidentified drones flying over Polish military bases near the Ukrainian border.');
+    const [eventDescription, setEventDescription] = useState('Russian hybrid warfare against European critical infrastructure outlook');
     const [eventContext, setEventContext] = useState('');
     const [savedMemorandums, setSavedMemorandums] = useState<SavedMemorandum[]>([]);
     const [activeMemorandumId, setActiveMemorandumId] = useState<string | null>(null);
@@ -701,9 +975,9 @@ export const ThreatLandscape: React.FC = () => {
         resetResults();
 
         try {
-            const period = getTimePeriod(timePeriod);
+            const period = activePeriod;
             
-            const trendsPromise = generateThreatLandscape(orgProfile, period, numTrends, trendGuidance);
+            const trendsPromise = generateThreatLandscape(orgProfile, period, numTrends, trendGuidance, isOutlookMode);
             const radarPromise = generateThreatRadarData(orgProfile);
 
             const [trendsSettled, radarSettled] = await Promise.allSettled([trendsPromise, radarPromise]);
@@ -798,8 +1072,8 @@ export const ThreatLandscape: React.FC = () => {
         resetResults();
 
         try {
-            const period = getTimePeriod(timePeriod);
-            const preview = await generateThreatMatrixPreview(orgProfile, period);
+            const period = activePeriod;
+            const preview = await generateThreatMatrixPreview(orgProfile, period, isOutlookMode);
             setMatrixPreview(preview);
         } catch (err) {
             const errorMessage = err instanceof Error ? err.message : 'An unknown error occurred.';
@@ -818,8 +1092,8 @@ export const ThreatLandscape: React.FC = () => {
         setMatrixResult(null);
 
         try {
-            const period = getTimePeriod(timePeriod);
-            const matrixResponse = await generateThreatMatrix(orgProfile, period, matrixPreview);
+            const period = activePeriod;
+            const matrixResponse = await generateThreatMatrix(orgProfile, period, matrixPreview, isOutlookMode);
 
             const initialMatrixResult: ThreatMatrixResult = {
                 ...matrixResponse,
@@ -885,7 +1159,7 @@ export const ThreatLandscape: React.FC = () => {
         if (!orgProfile.trim() || !matrixPreview) return;
         setRegeneratingQuadrant(quadrantKey);
         try {
-            const period = getTimePeriod(timePeriod);
+            const period = activePeriod;
             const quadrantTypeMap: { [key in typeof quadrantKey]: 'nationStateTech' | 'nationStateGeopolitical' | 'criminalTech' | 'criminalGeopolitical' } = {
                 nationStateTechTitle: 'nationStateTech',
                 nationStateGeopoliticalTitle: 'nationStateGeopolitical',
@@ -911,7 +1185,8 @@ export const ThreatLandscape: React.FC = () => {
         setError(null);
 
         try {
-            const memo = await generateMemorandumForEvent(eventDescription, orgProfile, selectedAudience, eventContext);
+            const period = activePeriod;
+            const memo = await generateMemorandumForEvent(eventDescription, orgProfile, selectedAudience, eventContext, period, isOutlookMode);
             const newMemoRecord: SavedMemorandum = {
                 id: uuidv4(),
                 timestamp: Date.now(),
@@ -919,6 +1194,8 @@ export const ThreatLandscape: React.FC = () => {
                 orgProfile,
                 targetAudience: selectedAudience,
                 memorandum: memo,
+                period: period.name,
+                isOutlookMode,
             };
             setSavedMemorandums(prev => [newMemoRecord, ...prev]);
             setActiveMemorandumId(newMemoRecord.id);
@@ -1427,19 +1704,63 @@ export const ThreatLandscape: React.FC = () => {
                             </div>
                             <textarea value={eventDescription} onChange={(e) => setEventDescription(e.target.value)} rows={2} placeholder="Describe the specific event to analyze, e.g., 'Russian hybrid warfare against European critical infrastructure outlook'..." className={commonInputClass} />
                         </div>
+
                         <div className="md:col-span-12">
                             <label className="block text-sm font-semibold text-text-secondary mb-1">Context / Guiding Data (Optional)</label>
                             <textarea 
                                 value={eventContext} 
                                 onChange={(e) => setEventContext(e.target.value)} 
-                                rows={6} 
+                                rows={5} 
                                 placeholder="Paste relevant text, articles, or reports here to guide the analysis..." 
                                 className={commonInputClass} 
                             />
                         </div>
+
+                        {/* Quarterly Window Range Selector & Outlook Mode (Both can be active at the same time) */}
+                        <div className="md:col-span-12">
+                            <QuarterlyWindowSelector
+                                periodMode={periodMode}
+                                setPeriodMode={setPeriodMode}
+                                startQuarter={startQuarter}
+                                setStartQuarter={setStartQuarter}
+                                startYear={startYear}
+                                setStartYear={setStartYear}
+                                endQuarter={endQuarter}
+                                setEndQuarter={setEndQuarter}
+                                endYear={endYear}
+                                setEndYear={setEndYear}
+                                timePeriod={timePeriod}
+                                setTimePeriod={setTimePeriod}
+                                isOutlookMode={isOutlookMode}
+                                setIsOutlookMode={setIsOutlookMode}
+                                activePeriod={activePeriod}
+                                disabled={isGenerating}
+                            />
+                        </div>
+
                         <div className="md:col-span-6">
-                            <label className="block text-sm font-semibold text-text-secondary mb-1">Your Organization's Profile</label>
-                            <textarea value={orgProfile} onChange={(e) => setOrgProfile(e.target.value)} rows={2} placeholder="e.g., A US-based financial services firm..." className={commonInputClass} />
+                            <div className="flex justify-between items-center mb-1 flex-wrap gap-1">
+                                <label className="block text-sm font-semibold text-text-secondary">Your Organization's Profile</label>
+                                <div className="flex items-center gap-1.5 flex-wrap text-xs">
+                                    <span className="text-text-secondary text-[11px]">Presets:</span>
+                                    {ORG_PROFILE_PRESETS.map((p, idx) => (
+                                        <button
+                                            key={idx}
+                                            type="button"
+                                            onClick={() => setOrgProfile(p.value)}
+                                            className={`px-2 py-0.5 rounded text-[11px] border transition-colors ${
+                                                orgProfile.includes(p.label) || orgProfile.includes(p.shortLabel)
+                                                    ? 'bg-accent-primary/20 border-accent-primary text-accent-primary font-semibold'
+                                                    : 'bg-surface hover:bg-border text-text-primary border-border'
+                                            }`}
+                                            title={p.label}
+                                        >
+                                            + {p.shortLabel}
+                                        </button>
+                                    ))}
+                                </div>
+                            </div>
+                            <textarea value={orgProfile} onChange={(e) => setOrgProfile(e.target.value)} rows={2} placeholder="e.g., Large European critical infrastructure provider..." className={commonInputClass} />
                         </div>
                         <div className="md:col-span-3">
                             <label className="block text-sm font-semibold text-text-secondary mb-1">Target Audience</label>
@@ -1456,8 +1777,28 @@ export const ThreatLandscape: React.FC = () => {
                 ) : (
                     <div className="grid grid-cols-1 md:grid-cols-12 gap-4 items-start pt-4">
                         <div className="md:col-span-12">
-                            <label className="block text-sm font-semibold text-text-secondary mb-1">Your Organization's Profile</label>
-                            <textarea value={orgProfile} onChange={(e) => setOrgProfile(e.target.value)} rows={3} placeholder="e.g., A US-based financial services firm specializing in cryptocurrency exchange..." className={commonInputClass} />
+                            <div className="flex justify-between items-center mb-1 flex-wrap gap-1">
+                                <label className="block text-sm font-semibold text-text-secondary">Your Organization's Profile</label>
+                                <div className="flex items-center gap-1.5 flex-wrap text-xs">
+                                    <span className="text-text-secondary text-[11px]">Presets:</span>
+                                    {ORG_PROFILE_PRESETS.map((p, idx) => (
+                                        <button
+                                            key={idx}
+                                            type="button"
+                                            onClick={() => setOrgProfile(p.value)}
+                                            className={`px-2 py-0.5 rounded text-[11px] border transition-colors ${
+                                                orgProfile.includes(p.label) || orgProfile.includes(p.shortLabel)
+                                                    ? 'bg-accent-primary/20 border-accent-primary text-accent-primary font-semibold'
+                                                    : 'bg-surface hover:bg-border text-text-primary border-border'
+                                            }`}
+                                            title={p.label}
+                                        >
+                                            + {p.shortLabel}
+                                        </button>
+                                    ))}
+                                </div>
+                            </div>
+                            <textarea value={orgProfile} onChange={(e) => setOrgProfile(e.target.value)} rows={3} placeholder="e.g., Large European critical infrastructure provider..." className={commonInputClass} />
                         </div>
                         {landscapeMode === 'trends' && (
                             <div className="md:col-span-12">
@@ -1465,27 +1806,42 @@ export const ThreatLandscape: React.FC = () => {
                                 <textarea value={trendGuidance} onChange={(e) => setTrendGuidance(e.target.value)} rows={2} placeholder="e.g., Please include recent ransomware attacks affecting the supply chain, specifically MOVEit..." className={commonInputClass} />
                             </div>
                         )}
-                        <div className="md:col-span-3">
-                            <label className="block text-sm font-semibold text-text-secondary mb-1">Reporting Period</label>
-                            <select value={timePeriod} onChange={(e) => setTimePeriod(e.target.value as any)} className={commonSelectClass}>
-                                <option value="last_quarter">Last Quarter</option>
-                                <option value="last_6_months">Last 6 Months</option>
-                                <option value="last_year">Last Year</option>
-                            </select>
+
+                        {/* Quarterly Window Range Selector & Outlook Mode */}
+                        <div className="md:col-span-12">
+                            <QuarterlyWindowSelector
+                                periodMode={periodMode}
+                                setPeriodMode={setPeriodMode}
+                                startQuarter={startQuarter}
+                                setStartQuarter={setStartQuarter}
+                                startYear={startYear}
+                                setStartYear={setStartYear}
+                                endQuarter={endQuarter}
+                                setEndQuarter={setEndQuarter}
+                                endYear={endYear}
+                                setEndYear={setEndYear}
+                                timePeriod={timePeriod}
+                                setTimePeriod={setTimePeriod}
+                                isOutlookMode={isOutlookMode}
+                                setIsOutlookMode={setIsOutlookMode}
+                                activePeriod={activePeriod}
+                                disabled={isGenerating}
+                            />
                         </div>
-                        <div className="md:col-span-3">
+
+                        <div className="md:col-span-4">
                             <label className="block text-sm font-semibold text-text-secondary mb-1">Number of Trends</label>
                             <select value={numTrends} onChange={(e) => setNumTrends(Number(e.target.value))} className={commonSelectClass} disabled={landscapeMode === 'matrix'}>
                                 {[1, 2, 3, 4, 5].map(n => <option key={n} value={n}>Top {n}</option>)}
                             </select>
                         </div>
-                        <div className="md:col-span-3">
+                        <div className="md:col-span-4">
                             <label className="block text-sm font-semibold text-text-secondary mb-1">Target Audience</label>
                             <select value={selectedAudience} onChange={(e) => setSelectedAudience(e.target.value)} className={commonSelectClass} title="Select audience for subsequent tailored analysis">
                                 {AUDIENCES.map(aud => <option key={aud} value={aud}>{aud}</option>)}
                             </select>
                         </div>
-                        <div className="md:col-span-3 self-end">
+                        <div className="md:col-span-4 self-end">
                             <button onClick={handleGenerateClick} disabled={isGenerateDisabled} className="w-full h-9 flex items-center justify-center gap-2 px-6 bg-accent-primary hover:opacity-90 disabled:bg-border text-white font-semibold rounded-lg shadow-sm transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-card focus:ring-accent-primary">
                                 {generateButtonText()}
                             </button>
